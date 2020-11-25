@@ -1,0 +1,23 @@
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.sk'
+sourceCompatibility = 1.8
+version = 0.1
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile project(':api-auth')
+}

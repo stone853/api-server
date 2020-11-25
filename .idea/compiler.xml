@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="api-constant_main" target="1.8" />
+      <module name="api-constant_test" target="1.8" />
+      <module name="api-constants_main" target="1.8" />
+      <module name="api-constants_test" target="1.8" />
+      <module name="api-interceptor_main" target="1.8" />
+      <module name="api-interceptor_test" target="1.8" />
+      <module name="api-server_main" target="1.8" />
+      <module name="api-server_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

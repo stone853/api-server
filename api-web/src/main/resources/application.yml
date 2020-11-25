@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: jinshi
+    url:  jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    hikari:
+      pool-name: SomeThingHikariCP
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 20
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 6000
+      connection-test-query: SELECT 1 FROM DUAL
+
+mybatis:
+  mapper-locations : classpath:mapper/*.xml
+  type-aliases-package: com.sk.web.model
+
+pagehelper:
+  offsetAsPageNum: true
+  row-bounds-with-count: true
+  page-size-zero: true
+  reasonable: false
+  params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+  support-methods-arguments: false
+
+

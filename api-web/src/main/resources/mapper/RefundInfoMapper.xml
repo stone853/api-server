@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sk.web.mapper.RefundInfoMapper">
+  <resultMap id="BaseResultMap" type="com.sk.web.model.RefundInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="charge_id" jdbcType="INTEGER" property="chargeId" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+
+</mapper>
