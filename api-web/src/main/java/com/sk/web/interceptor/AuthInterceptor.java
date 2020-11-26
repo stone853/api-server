@@ -7,7 +7,9 @@ import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.sk.web.model.Membership;
 import com.sk.web.service.MembershipService;
+import com.sk.web.service.imp.MembershipImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
@@ -16,46 +18,51 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Method;
 
 @Component
 public class AuthInterceptor implements HandlerInterceptor{
     long start = System.currentTimeMillis();
     @Autowired
-    MembershipService membershipService;
+    MembershipService service;
+//    @Bean
+//    public MembershipService getMembershipService() {
+//        return new MembershipImpl();
+//    }
     //preHandle是在请求执行前执行的
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         start = System.currentTimeMillis();
-        String token = request.getHeader("token");// 从 http 请求头中取出 token
-        // 如果不是映射到方法直接通过
-        if(!(handler instanceof HandlerMethod)){
+//        String token = request.getHeader("token");// 从 http 请求头中取出 token
+//        // 如果不是映射到方法直接通过
+//        if(!(handler instanceof HandlerMethod)){
+//            return true;
+//        }
+//
+//        // 执行认证
+//        if (token == null) {
+//            throw new RuntimeException("无token，请重新登录");
+//        }
+//        // 获取 token 中的 user name
+//        Membership user = new Membership();
+//        try {
+//            user.setName(JWT.decode(token).getAudience().get(0));
+//        } catch (JWTDecodeException j) {
+//            throw new RuntimeException("401");
+//        }
+//        //MembershipService service = getMembershipService();
+//        user = service.selectOne(user);
+//        if (user == null) {
+//            throw new RuntimeException("用户不存在，请重新登录");
+//        }
+//        // 验证 token
+//        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(user.getpassword())).build();
+//        try {
+//            jwtVerifier.verify(token);
+//
+//        } catch (JWTVerificationException e) {
+//            throw new RuntimeException("401");
+//        }
             return true;
-        }
-
-        // 执行认证
-        if (token == null) {
-            throw new RuntimeException("无token，请重新登录");
-        }
-        // 获取 token 中的 user id
-        Membership user = new Membership();
-        try {
-            user.setId(Integer.parseInt(JWT.decode(token).getAudience().get(0)));
-        } catch (JWTDecodeException j) {
-            throw new RuntimeException("401");
-        }
-        user = membershipService.selectOne(user);
-        if (user == null) {
-            throw new RuntimeException("用户不存在，请重新登录");
-        }
-        // 验证 token
-        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(user.getpassword())).build();
-        try {
-            jwtVerifier.verify(token);
-        } catch (JWTVerificationException e) {
-            throw new RuntimeException("401");
-        }
-        return true;
 
 
     }

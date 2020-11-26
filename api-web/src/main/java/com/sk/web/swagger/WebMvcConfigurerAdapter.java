@@ -1,7 +1,6 @@
 package com.sk.web.swagger;
 
-//import com.example.config.interceptor.LoginInterceptor;
-
+import com.sk.web.interceptor.AuthInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,21 +14,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 
 
 /**
- * @author niunafei
+ * @author jinshi
  * @function
- * @email niunafei0315@163.com
- * @date 2019/6/28  下午12:28
+ * @date 2020/11/24  下午12:28
  */
 @Configuration
 public class WebMvcConfigurerAdapter extends WebMvcConfigurationSupport {
 
-//    @Autowired
-//    private LoginInterceptor loginInterceptor;
+    @Autowired
+    private AuthInterceptor authInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加拦截接口请求处理，
-//        registry.addInterceptor(loginInterceptor).addPathPatterns("/api/**");
+        registry.addInterceptor(authInterceptor).addPathPatterns("/crm/**");
     }
 
     @Override

@@ -29,7 +29,7 @@ public class ProductInfoController {
 
     @ApiOperation("查询单个产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
-    @GetMapping("/v1/selectOne")
+    @PostMapping("/v1/selectOne")
     public Productinfo selectOne(@RequestBody Productinfo t){
         return productInfoService.selectOne(t);
     }

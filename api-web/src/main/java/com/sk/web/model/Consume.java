@@ -1,11 +1,12 @@
 package com.sk.web.model;
 
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "tcrm_consume")
 public class Consume {
+
     private Integer id;
 
     private Date time;

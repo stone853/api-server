@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Table(name = "tcrm_membership")
 public class Membership {
-    private int id;
+    private Integer id;
 
     private String name;
 
@@ -13,19 +13,19 @@ public class Membership {
 
     private String phone;
 
-    private int sex;
+    private Integer sex;
 
     private String level;
 
     private BigDecimal balance;
 
-    private int count;
+    private Integer count;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public Membership setId(int id) {
+    public Membership setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -56,11 +56,11 @@ public class Membership {
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public int getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
@@ -80,11 +80,11 @@ public class Membership {
         this.balance = balance;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 }

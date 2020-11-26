@@ -35,29 +35,30 @@ public class ConsumeController {
     @ApiOperation("查询单个消费")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public Consume selectOne(@RequestBody Consume t){
+    public Consume selectOne(@RequestHeader("token") String token,@RequestBody Consume t){
         return consumeService.selectOne(t);
     }
 
     @ApiOperation("增加消费")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @PostMapping("/v1/insert")
-    public String insert(@RequestBody Consume t) {
-        consumeService.insert(t);
+    public String insert(@RequestHeader("token") String token,@RequestBody Consume t) {
+        int a = consumeService.insert(t);
+        System.out.println(t.getId());
         return "1";
     }
 
     @ApiOperation("删除消费")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @PostMapping("/v1/delete")
-    public int delete(@RequestBody Consume t){
+    public int delete(@RequestHeader("token") String token,@RequestBody Consume t){
         return consumeService.delete(t);
     }
 
     @ApiOperation("更新消费信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @PostMapping("/v1/update")
-    public int update(@RequestBody Consume t){
+    public int update(@RequestHeader("token") String token,@RequestBody Consume t){
         ConsumeExample e = new ConsumeExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return consumeService.update(t,e);

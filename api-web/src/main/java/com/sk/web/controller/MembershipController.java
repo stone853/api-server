@@ -33,7 +33,7 @@ public class MembershipController {
 
     @ApiOperation("查询单个会员")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
-    @GetMapping("/v1/selectOne")
+    @PostMapping("/v1/selectOne")
     public Membership selectOne(@RequestBody Membership t){
         return membershipService.selectOne(t);
     }

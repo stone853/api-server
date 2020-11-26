@@ -31,7 +31,7 @@ public class RepositoryController {
 
     @ApiOperation("查询单个库存")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
-    @GetMapping("/v1/selectOne")
+    @PostMapping("/v1/selectOne")
     public Repository selectOne(@RequestBody Repository t){
         return repositoryService.selectOne(t);
     }

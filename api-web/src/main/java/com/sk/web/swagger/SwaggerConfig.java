@@ -44,8 +44,8 @@ public class SwaggerConfig {
      * @return
      */
     private ApiInfo apiInfo() {
-        Contact contact = new Contact("niunafei", "", "niunafei0315@163.com");
-        return new ApiInfoBuilder().title("swagger 测试文档").description("dev by niunafei").contact(contact)
+        Contact contact = new Contact("sk", "", "jinshixt@163.com");
+        return new ApiInfoBuilder().title("api-server 测试文档").description("dev by sk").contact(contact)
                 .version("1.0.0").build();
     }
 
