@@ -9,15 +9,15 @@ import com.sk.web.model.MembershipExample;
 import com.sk.web.service.MembershipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
-
 
 @Service
 public class MembershipImpl extends BaseImpl<Membership, MembershipExample> implements MembershipService{
-    @Autowired
-    protected MembershipMapper<Membership> mapper;
 
+    @Autowired
+    public void setMapper(MembershipMapper<Membership> mapper) {
+        this.mapper = mapper;
+    }
 
     public String getToken(Membership user) {
         System.out.println(new Date(System.currentTimeMillis() + CommonConstant.EXPIRE_TIME));

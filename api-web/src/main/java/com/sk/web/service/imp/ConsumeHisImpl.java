@@ -7,11 +7,11 @@ import com.sk.web.service.ConsumeHisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class ConsumeHisImpl extends BaseImpl<ConsumeHis, ConsumeHisExample> implements ConsumeHisService{
+
     @Autowired
-    protected ConsumeHisMapper<ConsumeHis> mapper;
-
-
+    public void setMapper(ConsumeHisMapper<ConsumeHis> mapper) {
+        super.mapper = mapper;
+    }
 }

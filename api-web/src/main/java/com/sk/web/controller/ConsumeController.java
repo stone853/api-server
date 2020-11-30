@@ -1,6 +1,7 @@
 package com.sk.web.controller;
 
 
+import com.sk.model.ResultModel;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Consume;
 import com.sk.web.model.ConsumeExample;
@@ -35,30 +36,29 @@ public class ConsumeController {
     @ApiOperation("查询单个消费")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public Consume selectOne(@RequestHeader("token") String token,@RequestBody Consume t){
+    public ResultModel<Consume> selectOne(@RequestHeader("token") String token, @RequestBody Consume t){
         return consumeService.selectOne(t);
+        //return null;
     }
 
     @ApiOperation("增加消费")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @PostMapping("/v1/insert")
-    public String insert(@RequestHeader("token") String token,@RequestBody Consume t) {
-        int a = consumeService.insert(t);
-        System.out.println(t.getId());
-        return "1";
+    public ResultModel<Consume> insert(@RequestHeader("token") String token,@RequestBody Consume t) {
+        return consumeService.insert(t);
     }
 
     @ApiOperation("删除消费")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @PostMapping("/v1/delete")
-    public int delete(@RequestHeader("token") String token,@RequestBody Consume t){
+    public ResultModel<Consume> delete(@RequestHeader("token") String token,@RequestBody Consume t){
         return consumeService.delete(t);
     }
 
     @ApiOperation("更新消费信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Consume",dataTypeClass = Consume.class , value ="")})
     @PostMapping("/v1/update")
-    public int update(@RequestHeader("token") String token,@RequestBody Consume t){
+    public ResultModel<Consume> update(@RequestHeader("token") String token,@RequestBody Consume t){
         ConsumeExample e = new ConsumeExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return consumeService.update(t,e);

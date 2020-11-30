@@ -7,11 +7,11 @@ import com.sk.web.service.RepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class RepositoryImpl extends BaseImpl<Repository, RepositoryExample> implements RepositoryService{
+
     @Autowired
-    protected RepositoryMapper<Repository> mapper;
-
-
+    public void setMapper(RepositoryMapper<Repository> mapper) {
+        this.mapper = mapper;
+    }
 }

@@ -7,11 +7,11 @@ import com.sk.web.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class ProductInfoImpl extends BaseImpl<Productinfo, ProductinfoExample> implements ProductInfoService{
+
     @Autowired
-    protected ProductInfoMapper<Productinfo> mapper;
-
-
+    public void setMapper(ProductInfoMapper<Productinfo> mapper) {
+        this.mapper = mapper;
+    }
 }

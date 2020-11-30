@@ -7,11 +7,11 @@ import com.sk.web.service.RefundInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class RefundInfoImpl extends BaseImpl<RefundInfo, RefundInfoExample> implements RefundInfoService{
+
     @Autowired
-    protected RefundInfoMapper<RefundInfo> mapper;
-
-
+    public void setMapper(RefundInfoMapper<RefundInfo> mapper) {
+        this.mapper = mapper;
+    }
 }

@@ -10,8 +10,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ConsumeDetailImpl extends BaseImpl<ConsumeDetail, ConsumeDetailExample> implements ConsumeDetailService{
+
     @Autowired
-    protected ConsumeDetailMapper<ConsumeDetail> mapper;
-
-
+    public void setMapper(ConsumeDetailMapper<ConsumeDetail> mapper) {
+        this.mapper = mapper;
+    }
 }

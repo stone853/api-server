@@ -1,5 +1,6 @@
 package com.sk.web.controller;
 
+import com.sk.model.ResultModel;
 import com.sk.web.model.Repository;
 import com.sk.web.model.RepositoryExample;
 import com.sk.web.service.RepositoryService;
@@ -32,29 +33,28 @@ public class RepositoryController {
     @ApiOperation("查询单个库存")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @PostMapping("/v1/selectOne")
-    public Repository selectOne(@RequestBody Repository t){
+    public ResultModel<Repository> selectOne(@RequestBody Repository t){
         return repositoryService.selectOne(t);
     }
 
     @ApiOperation("增加库存")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @PostMapping("/v1/insert")
-    public String insert(@RequestBody Repository t){
-        repositoryService.insert(t);
-        return "1";
+    public ResultModel<Repository> insert(@RequestBody Repository t){
+        return repositoryService.insert(t);
     }
 
     @ApiOperation("删除库存")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @PostMapping("/v1/delete")
-    public int delete(@RequestBody Repository t){
+    public ResultModel<Repository> delete(@RequestBody Repository t){
         return repositoryService.delete(t);
     }
 
     @ApiOperation("更新库存信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @PostMapping("/v1/update")
-    public int update(@RequestBody Repository t){
+    public ResultModel<Repository> update(@RequestBody Repository t){
         RepositoryExample e = new RepositoryExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return repositoryService.update(t,e);

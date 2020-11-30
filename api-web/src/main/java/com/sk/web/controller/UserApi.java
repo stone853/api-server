@@ -1,8 +1,10 @@
 package com.sk.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sk.model.ResultModel;
 import com.sk.web.model.Consume;
 import com.sk.web.model.Membership;
+import com.sk.web.model.RechargeInfo;
 import com.sk.web.model.User;
 import com.sk.web.service.MembershipService;
 import io.swagger.annotations.Api;
@@ -26,12 +28,12 @@ public class UserApi {
     @PostMapping("/v1/login")
     public Object login(@RequestBody User user){
         JSONObject jsonObject=new JSONObject();
-        Membership userForBase=membershipService.selectOne(new Membership().setName(user.getName()).setpassword(user.getPassword()));
+        ResultModel<Membership> userForBase= membershipService.selectOne(new Membership().setName(user.getName()).setpassword(user.getPassword()));
         if(userForBase==null){
             jsonObject.put("message","用户名或密码错误");
             return jsonObject;
         }
-        String token = membershipService.getToken(userForBase);
+        String token = membershipService.getToken(userForBase.getList().get(0));
         jsonObject.put("token", token);
         jsonObject.put("user", userForBase);
         return jsonObject;

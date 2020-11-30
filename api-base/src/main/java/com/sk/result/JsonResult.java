@@ -15,7 +15,6 @@ public class JsonResult implements Result{
     }
     @Override
     public JSONObject getResult() {
-
-        return null;
+        return result;
     }
 }

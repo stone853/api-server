@@ -1,5 +1,6 @@
 package com.sk.web.controller;
 
+import com.sk.model.ResultModel;
 import com.sk.web.model.Productinfo;
 import com.sk.web.model.ProductinfoExample;
 import com.sk.web.service.ProductInfoService;
@@ -22,37 +23,34 @@ public class ProductInfoController {
     public Map<String, Object> selectAll(){
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("product",productInfoService.selectAll());
-
-
         return map;
     }
 
     @ApiOperation("查询单个产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
     @PostMapping("/v1/selectOne")
-    public Productinfo selectOne(@RequestBody Productinfo t){
+    public ResultModel<Productinfo> selectOne(@RequestBody Productinfo t){
         return productInfoService.selectOne(t);
     }
 
     @ApiOperation("增加产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
     @PostMapping("/v1/insert")
-    public String insert(@RequestBody Productinfo t) {
-        productInfoService.insert(t);
-        return "1";
+    public ResultModel<Productinfo> insert(@RequestBody Productinfo t) {
+        return productInfoService.insert(t);
     }
 
     @ApiOperation("删除产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
     @PostMapping("/v1/delete")
-    public int delete(@RequestBody Productinfo t){
+    public ResultModel<Productinfo> delete(@RequestBody Productinfo t){
         return productInfoService.delete(t);
     }
 
     @ApiOperation("更新产品信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
     @PostMapping("/v1/update")
-    public int update(@RequestBody Productinfo t){
+    public ResultModel<Productinfo> update(@RequestBody Productinfo t){
         ProductinfoExample e = new ProductinfoExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return productInfoService.update(t,e);

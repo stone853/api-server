@@ -19,5 +19,6 @@ configurations {
 }
 
 dependencies {
+    compile project(':api-base')
     compile project(':api-auth')
 }

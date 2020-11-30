@@ -1,5 +1,6 @@
 package com.sk.web.controller;
 
+import com.sk.model.ResultModel;
 import com.sk.web.model.Purchase;
 import com.sk.web.model.PurchaseExample;
 import com.sk.web.service.PurchaseService;
@@ -32,29 +33,28 @@ public class PurchaseController {
     @ApiOperation("查询单个进货")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Purchase",dataTypeClass = Purchase.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public Purchase selectOne(@RequestBody Purchase t){
+    public ResultModel<Purchase> selectOne(@RequestBody Purchase t){
         return PurchaseService.selectOne(t);
     }
 
     @ApiOperation("增加进货")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Purchase",dataTypeClass = Purchase.class , value ="")})
     @PostMapping("/v1/insert")
-    public String insert(@RequestBody Purchase t){
-        PurchaseService.insert(t);
-        return "1";
+    public ResultModel<Purchase> insert(@RequestBody Purchase t){
+        return PurchaseService.insert(t);
     }
 
     @ApiOperation("删除进货")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Purchase",dataTypeClass = Purchase.class , value ="")})
     @PostMapping("/v1/delete")
-    public int delete(@RequestBody Purchase t){
+    public ResultModel<Purchase> delete(@RequestBody Purchase t){
         return PurchaseService.delete(t);
     }
 
     @ApiOperation("更新进货信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Purchase",dataTypeClass = Purchase.class , value ="")})
     @PostMapping("/v1/update")
-    public int update(@RequestBody Purchase t){
+    public ResultModel<Purchase> update(@RequestBody Purchase t){
         PurchaseExample e = new PurchaseExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return PurchaseService.update(t,e);

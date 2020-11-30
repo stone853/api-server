@@ -7,11 +7,11 @@ import com.sk.web.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class PurchaseImpl extends BaseImpl<Purchase, PurchaseExample> implements PurchaseService {
+
     @Autowired
-    protected PurchaseMapper<Purchase> mapper;
-
-
+    public void setMapper(PurchaseMapper<Purchase> mapper) {
+        this.mapper = mapper;
+    }
 }
