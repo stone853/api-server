@@ -1,7 +1,11 @@
 package com.sk.web.service;
 import com.sk.model.ResultModel;
+import com.sk.page.PageRequest;
+import com.sk.page.PageResult;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
+
 
 public interface BaseService<T,T1> {
     ResultModel<T> selectAll(T record);

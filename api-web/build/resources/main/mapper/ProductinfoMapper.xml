@@ -14,4 +14,11 @@
 <!--    FROM-->
 <!--    <include refid="table" />-->
 <!--  </select>-->
+
+
+  <select id="selectPage"  resultMap="BaseResultMap">
+    select
+    *
+    from tcrm_productinfo
+  </select>
 </mapper>

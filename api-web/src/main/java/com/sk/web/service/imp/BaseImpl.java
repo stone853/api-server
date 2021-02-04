@@ -1,10 +1,16 @@
 package com.sk.web.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
+import com.sk.page.PageRequest;
+import com.sk.page.PageResult;
+import com.sk.page.PageUtils;
+import com.sk.web.mapper.BaseMapper;
+import com.sk.web.model.Productinfo;
 import com.sk.web.service.BaseService;
-import tk.mybatis.mapper.common.Mapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +23,9 @@ import java.util.List;
 
 public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
 
-    protected Mapper<T> mapper;
+    protected BaseMapper<T> mapper;
 
-    public Mapper<T> getMapper() {
+    public BaseMapper<T> getMapper() {
         return mapper;
     }
 
@@ -50,5 +56,7 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
     public ResultModel<T> delete (T record) {
         return new ResultModel<T>().setCode(mapper.delete(record)).setNote(ResultEnum.SUCCESS.getMsg());
     }
+
+
 
 }
