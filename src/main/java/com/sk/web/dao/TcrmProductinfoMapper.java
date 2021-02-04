@@ -10,13 +10,21 @@ public interface TcrmProductinfoMapper {
 
     int deleteByExample(TcrmProductinfoExample example);
 
+    int deleteByPrimaryKey(Integer id);
+
     int insert(TcrmProductinfo record);
 
     int insertSelective(TcrmProductinfo record);
 
     List<TcrmProductinfo> selectByExample(TcrmProductinfoExample example);
 
+    TcrmProductinfo selectByPrimaryKey(Integer id);
+
     int updateByExampleSelective(@Param("record") TcrmProductinfo record, @Param("example") TcrmProductinfoExample example);
 
     int updateByExample(@Param("record") TcrmProductinfo record, @Param("example") TcrmProductinfoExample example);
+
+    int updateByPrimaryKeySelective(TcrmProductinfo record);
+
+    int updateByPrimaryKey(TcrmProductinfo record);
 }

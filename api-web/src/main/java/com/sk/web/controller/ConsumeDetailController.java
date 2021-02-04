@@ -28,7 +28,6 @@ public class ConsumeDetailController {
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("consume_detail",ConsumeDetailService.selectAll());
 
-
         return map;
     }
 
@@ -44,7 +43,6 @@ public class ConsumeDetailController {
     @PostMapping("/v1/insert")
     public ResultModel<ConsumeDetail> insert(@RequestBody ConsumeDetail t) {
         return ConsumeDetailService.insert(t);
-
     }
 
     @ApiOperation("删除消费明细")

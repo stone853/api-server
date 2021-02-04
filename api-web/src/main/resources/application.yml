@@ -3,8 +3,8 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: jinshi
-    url:  jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    password: Jin87520024
+    url:  jdbc:mysql://8.136.148.63:3306/crm?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
     hikari:
       pool-name: SomeThingHikariCP
       minimum-idle: 5
@@ -29,4 +29,9 @@ pagehelper:
   params: pageNum=pageHelperStart;pageSize=pageHelperRows;
   support-methods-arguments: false
 
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    cn.jay.repository: trace
 

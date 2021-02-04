@@ -9,6 +9,12 @@ import tk.mybatis.mapper.common.Mapper;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * jinshi on 20201119
+ * @param <T>
+ * @param <T1>
+ */
+
 public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
 
     protected Mapper<T> mapper;
@@ -22,21 +28,19 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
     }
 
     public ResultModel<T> selectAll() {
-        ResultModel<T> result = new ResultModel();
         JSONObject json = new JSONObject();
         json.put("list",mapper.selectAll());
-        return result.setCode(ResultEnum.SUCCESS.getCode()).setNote(ResultEnum.SUCCESS.getMsg()).setList(mapper.selectAll());
+        return new ResultModel().setCode(ResultEnum.SUCCESS.getCode()).setNote(ResultEnum.SUCCESS.getMsg()).setList(mapper.selectAll());
     }
 
     public ResultModel<T> selectOne(T record) {
-        ResultModel<T> result = new ResultModel();
         List<T> list = new ArrayList();
         list.add(mapper.selectOne(record));
-        return result.setCode(ResultEnum.SUCCESS.getCode()).setNote(ResultEnum.SUCCESS.getMsg()).setList(list);
+        return new ResultModel().setCode(ResultEnum.SUCCESS.getCode()).setNote(ResultEnum.SUCCESS.getMsg()).setList(list);
     }
 
     public ResultModel<T> insert(T record) {
-        return new ResultModel<T>().setCode(mapper.insert(record));
+        return new ResultModel<T>().setCode(mapper.insert(record)).setNote(ResultEnum.SUCCESS.getMsg());
     }
 
     public ResultModel<T> update (T record,T1 object) {

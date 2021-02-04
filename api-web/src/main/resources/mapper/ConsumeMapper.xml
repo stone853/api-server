@@ -3,7 +3,9 @@
 <mapper namespace="com.sk.web.mapper.ConsumeMapper">
   <resultMap id="BaseResultMap" type="com.sk.web.model.Consume">
     <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="mem_id" jdbcType="INTEGER" property="memId" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="count" jdbcType="INTEGER" property="count" />
     <result column="price" jdbcType="DECIMAL" property="price" />
     <result column="pre_price" jdbcType="DECIMAL" property="prePrice" />
     <result column="pre_time" jdbcType="TIMESTAMP" property="preTime" />

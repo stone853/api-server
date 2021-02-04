@@ -6,10 +6,13 @@ import java.util.Date;
 
 @Table(name = "tcrm_consume")
 public class Consume {
-
     private Integer id;
 
+    private Integer memId;
+
     private Date time;
+
+    private Integer count;
 
     private BigDecimal price;
 
@@ -35,35 +38,57 @@ public class Consume {
         this.time = time;
     }
 
+    public Consume setMemId(Integer memId) {
+        this.memId = memId;
+        return this;
+    }
+
+    public Integer getMemId() {
+        return memId;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public Consume setCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public Consume setPrice(BigDecimal price) {
         this.price = price;
+        return this;
     }
 
     public BigDecimal getPrePrice() {
         return prePrice;
     }
 
-    public void setPrePrice(BigDecimal prePrice) {
+    public Consume setPrePrice(BigDecimal prePrice) {
         this.prePrice = prePrice;
+        return this;
     }
 
     public Date getPreTime() {
         return preTime;
     }
 
-    public void setPreTime(Date preTime) {
+    public Consume setPreTime(Date preTime) {
         this.preTime = preTime;
+        return this;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public Consume setStatus(String status) {
         this.status = status == null ? null : status.trim();
+        return this;
     }
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Table(name = "tcrm_consume")
 public class ConsumeExample {
     protected String orderByClause;
 
@@ -167,6 +168,66 @@ public class ConsumeExample {
             return (Criteria) this;
         }
 
+        public Criteria andMemIdIsNull() {
+            addCriterion("mem_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdIsNotNull() {
+            addCriterion("mem_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdEqualTo(Integer value) {
+            addCriterion("mem_id =", value, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdNotEqualTo(Integer value) {
+            addCriterion("mem_id <>", value, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdGreaterThan(Integer value) {
+            addCriterion("mem_id >", value, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("mem_id >=", value, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdLessThan(Integer value) {
+            addCriterion("mem_id <", value, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdLessThanOrEqualTo(Integer value) {
+            addCriterion("mem_id <=", value, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdIn(List<Integer> values) {
+            addCriterion("mem_id in", values, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdNotIn(List<Integer> values) {
+            addCriterion("mem_id not in", values, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdBetween(Integer value1, Integer value2) {
+            addCriterion("mem_id between", value1, value2, "memId");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("mem_id not between", value1, value2, "memId");
+            return (Criteria) this;
+        }
+
         public Criteria andTimeIsNull() {
             addCriterion("time is null");
             return (Criteria) this;
@@ -224,6 +285,66 @@ public class ConsumeExample {
 
         public Criteria andTimeNotBetween(Date value1, Date value2) {
             addCriterion("time not between", value1, value2, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountIsNull() {
+            addCriterion("count is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountIsNotNull() {
+            addCriterion("count is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountEqualTo(Integer value) {
+            addCriterion("count =", value, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountNotEqualTo(Integer value) {
+            addCriterion("count <>", value, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountGreaterThan(Integer value) {
+            addCriterion("count >", value, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("count >=", value, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountLessThan(Integer value) {
+            addCriterion("count <", value, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountLessThanOrEqualTo(Integer value) {
+            addCriterion("count <=", value, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountIn(List<Integer> values) {
+            addCriterion("count in", values, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountNotIn(List<Integer> values) {
+            addCriterion("count not in", values, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountBetween(Integer value1, Integer value2) {
+            addCriterion("count between", value1, value2, "count");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("count not between", value1, value2, "count");
             return (Criteria) this;
         }
 

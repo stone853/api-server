@@ -1,6 +1,7 @@
 package com.sk.web.controller;
 
 
+import com.sk.exception.BizException;
 import com.sk.model.ResultModel;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Consume;
@@ -29,7 +30,6 @@ public class ConsumeController {
     public Map<String, Object> selectAll(@RequestHeader("token") String token){
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("consume",consumeService.selectAll());
-
         return map;
     }
 

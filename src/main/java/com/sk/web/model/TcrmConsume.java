@@ -6,7 +6,11 @@ import java.util.Date;
 public class TcrmConsume {
     private Integer id;
 
+    private Integer memId;
+
     private Date time;
+
+    private Integer count;
 
     private BigDecimal price;
 
@@ -24,12 +28,28 @@ public class TcrmConsume {
         this.id = id;
     }
 
+    public Integer getMemId() {
+        return memId;
+    }
+
+    public void setMemId(Integer memId) {
+        this.memId = memId;
+    }
+
     public Date getTime() {
         return time;
     }
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public BigDecimal getPrice() {
