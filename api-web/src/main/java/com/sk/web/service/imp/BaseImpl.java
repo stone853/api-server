@@ -9,7 +9,6 @@ import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.page.PageUtils;
 import com.sk.web.mapper.BaseMapper;
-import com.sk.web.model.Productinfo;
 import com.sk.web.service.BaseService;
 
 import java.util.ArrayList;
@@ -58,5 +57,21 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
     }
 
 
+    public PageResult findPage(PageRequest pageRequest) {
+        return PageUtils.getPageResult(pageRequest, getPageInfo(pageRequest));
+    }
+
+    /**
+     * 调用分页插件完成分页
+     * @param
+     * @return
+     */
+    private PageInfo<T> getPageInfo(PageRequest pageRequest) {
+        int pageNum = pageRequest.getPageNum();
+        int pageSize = pageRequest.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+        List<T> sysMenus = mapper.selectPage();
+        return new PageInfo<T>(sysMenus);
+    }
 
 }

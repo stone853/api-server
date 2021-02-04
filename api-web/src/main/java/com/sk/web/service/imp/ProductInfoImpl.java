@@ -22,21 +22,6 @@ public class ProductInfoImpl extends BaseImpl<Productinfo, ProductinfoExample> i
         this.mapper = mapper;
     }
 
-    public PageResult findPage(PageRequest pageRequest) {
-        return PageUtils.getPageResult(pageRequest, getPageInfo(pageRequest));
-    }
 
-    /**
-     * 调用分页插件完成分页
-     * @param pageQuery
-     * @return
-     */
-    private PageInfo<Productinfo> getPageInfo(PageRequest pageRequest) {
-        int pageNum = pageRequest.getPageNum();
-        int pageSize = pageRequest.getPageSize();
-        PageHelper.startPage(pageNum, pageSize);
-        List<Productinfo> sysMenus = mapper.selectPage();
-        return new PageInfo<Productinfo>(sysMenus);
-    }
 
 }

@@ -1,5 +1,7 @@
 package com.sk.web.service.imp;
 
+import com.sk.page.PageRequest;
+import com.sk.page.PageResult;
 import com.sk.web.mapper.ConsumeHisMapper;
 import com.sk.web.model.ConsumeHis;
 import com.sk.web.model.ConsumeHisExample;
@@ -14,4 +16,6 @@ public class ConsumeHisImpl extends BaseImpl<ConsumeHis, ConsumeHisExample> impl
     public void setMapper(ConsumeHisMapper<ConsumeHis> mapper) {
         super.mapper = mapper;
     }
+
+
 }

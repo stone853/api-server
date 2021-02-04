@@ -1,6 +1,8 @@
 package com.sk.web.controller;
 
 import com.sk.model.ResultModel;
+import com.sk.page.PageRequest;
+import com.sk.page.PageResult;
 import com.sk.web.model.Productinfo;
 import com.sk.web.model.ProductinfoExample;
 import com.sk.web.service.ProductInfoService;
@@ -29,6 +31,14 @@ public class ProductInfoController {
         map.put("product",productInfoService.selectAll());
         return map;
     }
+
+    @ApiOperation("分页查询所有产品")
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
+    @PostMapping("/v1/selectPage")
+    public PageResult selectPage(@RequestBody PageRequest pageQuery){
+        return productInfoService.findPage(pageQuery);
+    }
+
 
     @ApiOperation("查询单个产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
