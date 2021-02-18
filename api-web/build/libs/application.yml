@@ -30,6 +30,15 @@ pagehelper:
   support-methods-arguments: false
 
 logging:
-  file : /opt/rh/logs.log
+  config: classpath:log4j2.xml
+  level:
+    cn.jay.repository: trace
 
 
+
+server:
+  port: 800
+  ssl:
+    key-store: classpath:cert/5173245_www.csh111.top.pfx
+    key-store-password: ciEgQpS8
+    keyStoreType: PKCS12

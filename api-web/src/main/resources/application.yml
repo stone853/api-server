@@ -14,6 +14,12 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 6000
       connection-test-query: SELECT 1 FROM DUAL
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+
 
 mybatis:
   mapper-locations : classpath:mapper/*.xml
@@ -34,4 +40,15 @@ logging:
   config: classpath:log4j2.xml
   level:
     cn.jay.repository: trace
+
+
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+#  ssl:
+#    key-store: classpath:cert/5173245_www.csh111.top.pfx
+#    key-store-password: ciEgQpS8
+#    keyStoreType: PKCS12
 

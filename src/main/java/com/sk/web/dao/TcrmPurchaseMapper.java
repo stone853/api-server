@@ -10,21 +10,13 @@ public interface TcrmPurchaseMapper {
 
     int deleteByExample(TcrmPurchaseExample example);
 
-    int deleteByPrimaryKey(Integer id);
-
     int insert(TcrmPurchase record);
 
     int insertSelective(TcrmPurchase record);
 
     List<TcrmPurchase> selectByExample(TcrmPurchaseExample example);
 
-    TcrmPurchase selectByPrimaryKey(Integer id);
-
     int updateByExampleSelective(@Param("record") TcrmPurchase record, @Param("example") TcrmPurchaseExample example);
 
     int updateByExample(@Param("record") TcrmPurchase record, @Param("example") TcrmPurchaseExample example);
-
-    int updateByPrimaryKeySelective(TcrmPurchase record);
-
-    int updateByPrimaryKey(TcrmPurchase record);
 }

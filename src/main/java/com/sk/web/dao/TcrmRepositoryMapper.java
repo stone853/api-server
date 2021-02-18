@@ -10,21 +10,13 @@ public interface TcrmRepositoryMapper {
 
     int deleteByExample(TcrmRepositoryExample example);
 
-    int deleteByPrimaryKey(Integer id);
-
     int insert(TcrmRepository record);
 
     int insertSelective(TcrmRepository record);
 
     List<TcrmRepository> selectByExample(TcrmRepositoryExample example);
 
-    TcrmRepository selectByPrimaryKey(Integer id);
-
     int updateByExampleSelective(@Param("record") TcrmRepository record, @Param("example") TcrmRepositoryExample example);
 
     int updateByExample(@Param("record") TcrmRepository record, @Param("example") TcrmRepositoryExample example);
-
-    int updateByPrimaryKeySelective(TcrmRepository record);
-
-    int updateByPrimaryKey(TcrmRepository record);
 }

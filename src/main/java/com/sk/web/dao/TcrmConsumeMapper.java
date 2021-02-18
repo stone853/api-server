@@ -10,21 +10,13 @@ public interface TcrmConsumeMapper {
 
     int deleteByExample(TcrmConsumeExample example);
 
-    int deleteByPrimaryKey(Integer id);
-
     int insert(TcrmConsume record);
 
     int insertSelective(TcrmConsume record);
 
     List<TcrmConsume> selectByExample(TcrmConsumeExample example);
 
-    TcrmConsume selectByPrimaryKey(Integer id);
-
     int updateByExampleSelective(@Param("record") TcrmConsume record, @Param("example") TcrmConsumeExample example);
 
     int updateByExample(@Param("record") TcrmConsume record, @Param("example") TcrmConsumeExample example);
-
-    int updateByPrimaryKeySelective(TcrmConsume record);
-
-    int updateByPrimaryKey(TcrmConsume record);
 }

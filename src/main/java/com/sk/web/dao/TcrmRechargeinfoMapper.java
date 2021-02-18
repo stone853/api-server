@@ -10,21 +10,13 @@ public interface TcrmRechargeinfoMapper {
 
     int deleteByExample(TcrmRechargeinfoExample example);
 
-    int deleteByPrimaryKey(Integer id);
-
     int insert(TcrmRechargeinfo record);
 
     int insertSelective(TcrmRechargeinfo record);
 
     List<TcrmRechargeinfo> selectByExample(TcrmRechargeinfoExample example);
 
-    TcrmRechargeinfo selectByPrimaryKey(Integer id);
-
     int updateByExampleSelective(@Param("record") TcrmRechargeinfo record, @Param("example") TcrmRechargeinfoExample example);
 
     int updateByExample(@Param("record") TcrmRechargeinfo record, @Param("example") TcrmRechargeinfoExample example);
-
-    int updateByPrimaryKeySelective(TcrmRechargeinfo record);
-
-    int updateByPrimaryKey(TcrmRechargeinfo record);
 }

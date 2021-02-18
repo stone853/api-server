@@ -10,21 +10,13 @@ public interface TcrmDictMapper {
 
     int deleteByExample(TcrmDictExample example);
 
-    int deleteByPrimaryKey(Integer id);
-
     int insert(TcrmDict record);
 
     int insertSelective(TcrmDict record);
 
     List<TcrmDict> selectByExample(TcrmDictExample example);
 
-    TcrmDict selectByPrimaryKey(Integer id);
-
     int updateByExampleSelective(@Param("record") TcrmDict record, @Param("example") TcrmDictExample example);
 
     int updateByExample(@Param("record") TcrmDict record, @Param("example") TcrmDictExample example);
-
-    int updateByPrimaryKeySelective(TcrmDict record);
-
-    int updateByPrimaryKey(TcrmDict record);
 }
