@@ -52,3 +52,8 @@ server:
 #    key-store-password: ciEgQpS8
 #    keyStoreType: PKCS12
 
+crm:
+  upload:
+    image:
+      url: D://images/
+

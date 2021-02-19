@@ -17,7 +17,29 @@ public class Productinfo {
 
     private String type;
 
-    private double sl;
+    private String imgUrl;
+
+    private String detail;
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+
 
     public Integer getId() {
         return id;

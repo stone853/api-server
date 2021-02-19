@@ -1,8 +1,10 @@
 package com.sk.web.controller;
 
+import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
+import com.sk.web.config.CrmConfig;
 import com.sk.web.model.ProductImage;
 import com.sk.web.model.ProductImageExample;
 import com.sk.web.service.ProductImageService;
@@ -31,6 +33,9 @@ public class ProductImageController {
 
     @Autowired
     ProductImageService productImageService;
+
+    @Autowired
+    CrmConfig crmConfig;
 
     @Resource
     HttpServletResponse response;
@@ -69,14 +74,18 @@ public class ProductImageController {
 
     @ApiOperation("上传图片")
     @PostMapping("/v1/upload")
-    public String uploadImg(@RequestParam("file") MultipartFile file) {
-        response.setHeader("content-type", "text/plain;charset=UTF-8");
+    public ResultModel uploadImg(@RequestParam("file") MultipartFile file) {
         String fileName = file.getOriginalFilename();
+        String url = crmConfig.getUploadUrl();
         try {
-            FileUtil.uploadFile(file.getBytes(), "D://", fileName);
-            return "上传成功";
+            FileUtil.uploadFile(file.getBytes(),url, fileName);
+            //FileUtil.compressImage(crmConfig.getUploadUrl()+ fileName,100);
+            FileUtil.uploadFile(FileUtil.compressImage(url+ fileName,100),url, fileName);
+
+            return new ResultModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setNote(url+fileName);
         } catch (Exception e) {
-            return "上传失败";
+            e.printStackTrace();
+            return new ResultModel<ProductImage>().setCode(ResultEnum.ERROR.getCode()).setNote(ResultEnum.ERROR.getMsg());
         }
     }
 

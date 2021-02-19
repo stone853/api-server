@@ -236,6 +236,11 @@ public class ProductinfoExample {
             return (Criteria) this;
         }
 
+
+
+
+
+
         public Criteria andTypeIsNull() {
             addCriterion("type is null");
             return (Criteria) this;
@@ -303,6 +308,147 @@ public class ProductinfoExample {
 
         public Criteria andTypeNotBetween(String value1, String value2) {
             addCriterion("type not between", value1, value2, "type");
+            return (Criteria) this;
+        }
+
+
+        public Criteria andImgUrlIsNull() {
+            addCriterion("imgurl is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlIsNotNull() {
+            addCriterion("imgurl is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlEqualTo(String value) {
+            addCriterion("imgurl =", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlNotEqualTo(String value) {
+            addCriterion("imgurl <>", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlGreaterThan(String value) {
+            addCriterion("imgurl >", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("imgurl >=", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlLessThan(String value) {
+            addCriterion("imgurl <", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlLessThanOrEqualTo(String value) {
+            addCriterion("imgurl <=", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlLike(String value) {
+            addCriterion("imgurl like", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlNotLike(String value) {
+            addCriterion("imgurl not like", value, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlIn(List<String> values) {
+            addCriterion("imgurl in", values, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlNotIn(List<String> values) {
+            addCriterion("imgurl not in", values, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlBetween(String value1, String value2) {
+            addCriterion("imgurl between", value1, value2, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgUrlNotBetween(String value1, String value2) {
+            addCriterion("imgurl not between", value1, value2, "imgurl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailIsNull() {
+            addCriterion("detail is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailIsNotNull() {
+            addCriterion("detail is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailEqualTo(String value) {
+            addCriterion("detail =", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailNotEqualTo(String value) {
+            addCriterion("detail <>", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailGreaterThan(String value) {
+            addCriterion("detail >", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailGreaterThanOrEqualTo(String value) {
+            addCriterion("detail >=", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailLessThan(String value) {
+            addCriterion("detail <", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailLessThanOrEqualTo(String value) {
+            addCriterion("detail <=", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailLike(String value) {
+            addCriterion("detail like", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailNotLike(String value) {
+            addCriterion("detail not like", value, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailIn(List<String> values) {
+            addCriterion("detail in", values, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailNotIn(List<String> values) {
+            addCriterion("detail not in", values, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailBetween(String value1, String value2) {
+            addCriterion("detail between", value1, value2, "detail");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailNotBetween(String value1, String value2) {
+            addCriterion("detail not between", value1, value2, "detail");
             return (Criteria) this;
         }
     }

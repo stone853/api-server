@@ -5,6 +5,8 @@
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
   </resultMap>
 
 
