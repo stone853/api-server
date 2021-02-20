@@ -15,5 +15,4 @@ public class ProductImageImpl extends BaseImpl<ProductImage, ProductImageExample
         this.mapper = mapper;
     }
 
-
 }

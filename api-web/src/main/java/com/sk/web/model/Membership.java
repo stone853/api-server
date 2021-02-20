@@ -21,6 +21,19 @@ public class Membership {
 
     private Integer count;
 
+    private String openId;
+
+
+
+    public Membership setOpenId(String openId) {
+        this.openId = openId;
+        return  this;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -39,12 +52,12 @@ public class Membership {
         return this;
     }
 
-    public Membership setpassword(String password) {
+    public Membership setPassword(String password) {
         this.password = password;
         return this;
     }
 
-    public String getpassword() {
+    public String getPassword() {
         return password;
     }
 

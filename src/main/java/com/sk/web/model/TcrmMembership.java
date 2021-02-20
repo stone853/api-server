@@ -19,6 +19,8 @@ public class TcrmMembership {
 
     private Integer count;
 
+    private String openid;
+
     public Integer getId() {
         return id;
     }
@@ -81,5 +83,13 @@ public class TcrmMembership {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid == null ? null : openid.trim();
     }
 }

@@ -49,7 +49,7 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
     }
 
     public ResultModel<T> update (T record,T1 object) {
-        return new ResultModel<T>().setCode(mapper.updateByExample(record,object)).setNote(ResultEnum.SUCCESS.getMsg());
+        return new ResultModel<T>().setCode(mapper.updateByExampleSelective(record,object)).setNote(ResultEnum.SUCCESS.getMsg());
     }
 
     public ResultModel<T> delete (T record) {

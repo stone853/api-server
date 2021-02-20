@@ -28,7 +28,7 @@ public class UserApi {
     @PostMapping("/v1/login")
     public Object login(@RequestBody User user){
         JSONObject jsonObject=new JSONObject();
-        ResultModel<Membership> userForBase= membershipService.selectOne(new Membership().setName(user.getName()).setpassword(user.getPassword()));
+        ResultModel<Membership> userForBase= membershipService.selectOne(new Membership().setName(user.getName()).setPassword(user.getPassword()));
         if(userForBase==null){
             jsonObject.put("message","用户名或密码错误");
             return jsonObject;

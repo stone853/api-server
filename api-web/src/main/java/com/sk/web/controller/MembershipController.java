@@ -1,5 +1,6 @@
 package com.sk.web.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sk.model.ResultModel;
 import com.sk.web.model.Membership;
 import com.sk.web.model.MembershipExample;
@@ -37,6 +38,19 @@ public class MembershipController {
     @PostMapping("/v1/selectOne")
     public ResultModel<Membership> selectOne(@RequestBody Membership t){
         return membershipService.selectOne(t);
+    }
+
+
+    @ApiOperation("查询单个会员(微信)")
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="")})
+    @PostMapping("/v1/selectOneForWx")
+    public ResultModel<Membership> selectOneForWx(@RequestParam("code") String code) {
+        String result = membershipService.getOpenId(code);
+        JSONObject json = JSONObject.parseObject(result);
+        String openId = json.getString("openid");
+        Membership membership = new Membership();
+        membership.setOpenId(openId);
+        return membershipService.selectOne(membership.setOpenId(""));
     }
 
     @ApiOperation("增加会员")

@@ -12,7 +12,7 @@ public class Productinfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull(message = "产品名称不能为空")
+    //@NotNull(message = "产品名称不能为空")
     private String name;
 
     private String type;

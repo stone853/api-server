@@ -10,5 +10,6 @@
     <result column="level" jdbcType="VARCHAR" property="level" />
     <result column="balance" jdbcType="DECIMAL" property="balance" />
     <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
   </resultMap>
 </mapper>

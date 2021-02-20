@@ -22,6 +22,10 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.OutputStream;
+import java.rmi.server.ExportException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -82,11 +86,33 @@ public class ProductImageController {
             //FileUtil.compressImage(crmConfig.getUploadUrl()+ fileName,100);
             FileUtil.uploadFile(FileUtil.compressImage(url+ fileName,100),url, fileName);
 
-            return new ResultModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setNote(url+fileName);
+            return new ResultModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setNote("/product_image/vi/getImage?path="+url+fileName);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResultModel<ProductImage>().setCode(ResultEnum.ERROR.getCode()).setNote(ResultEnum.ERROR.getMsg());
         }
+    }
+
+    @ApiOperation("获取图片")
+    @PostMapping("/v1/getImage")
+    public void getImage (@RequestParam("path") String path) {
+        try {
+            File filePic = new File(path);
+            if(filePic.exists()){
+                FileInputStream is = new FileInputStream(filePic);
+                int i = is.available(); // 得到文件大小
+                byte data[] = new byte[i];
+                is.read(data); // 读数据
+                is.close();
+                response.setContentType("image/*"); // 设置返回的文件类型
+                OutputStream toClient = response.getOutputStream(); // 得到向客户端输出二进制数据的对象
+                toClient.write(data); // 输出数据
+                toClient.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 
