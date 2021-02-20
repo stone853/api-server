@@ -65,16 +65,18 @@ public class Membership {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public Membership setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
+        return  this;
     }
 
     public Integer getSex() {
         return sex;
     }
 
-    public void setSex(Integer sex) {
+    public Membership setSex(Integer sex) {
         this.sex = sex;
+        return this;
     }
 
     public String getLevel() {

@@ -28,8 +28,6 @@ public class MembershipController {
     public Map<String, Object> selectAll(){
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("membership",membershipService.selectAll());
-
-
         return map;
     }
 
@@ -50,7 +48,21 @@ public class MembershipController {
         String openId = json.getString("openid");
         Membership membership = new Membership();
         membership.setOpenId(openId);
-        return membershipService.selectOne(membership.setOpenId(""));
+        return membershipService.selectOne(membership);
+    }
+
+    @ApiOperation("增加会员(微信)")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="code",value="code",required=true,paramType="form"),
+            @ApiImplicitParam(name="sex",value="性别",paramType="form",dataType="Integer"),
+            @ApiImplicitParam(name="name",value="姓名",paramType="form")
+    })
+    @PostMapping("/v1/insertForWx")
+    public ResultModel<Membership> insertForWx(@RequestParam("code") String code,@RequestParam("sex") int sex,@RequestParam("name") String name) {
+        String result = membershipService.getOpenId(code);
+        JSONObject json = JSONObject.parseObject(result);
+        String openId = json.getString("openid");
+        return membershipService.insert(new Membership().setSex(sex).setOpenId(openId).setName(name));
     }
 
     @ApiOperation("增加会员")
