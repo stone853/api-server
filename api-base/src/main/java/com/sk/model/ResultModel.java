@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ResultModel<T> {
     private int code;
-    private String note;
+    private String message;
     private List<T> list;
 
     public int getCode() {
@@ -23,17 +23,19 @@ public class ResultModel<T> {
         return this;
     }
 
-    public String getNote() {
-        return note;
+    public String getMessage() {
+        return message;
     }
 
-    public ResultModel<T> setNote(String note) {
-        this.note = note;
+    public ResultModel<T> setMessage(String message) {
+        this.message = message;
         return this;
     }
 
     public ResultModel<T> setList(List<T> list) {
-        this.list = list;
+        if (null != list || list.size() >0) {
+            this.list = list;
+        }
         return this;
     }
 

@@ -1,9 +1,11 @@
 package com.sk.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
 import com.sk.web.model.Membership;
 import com.sk.web.model.MembershipExample;
+import com.sk.web.model.api.InsertForWxModel;
 import com.sk.web.service.MembershipService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -35,6 +37,9 @@ public class MembershipController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
     @PostMapping("/v1/selectOne")
     public ResultModel<Membership> selectOne(@RequestBody Membership t){
+        if (t == null || null == t.getId() || "".equals(t.getId())) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("id不能为空");
+        }
         return membershipService.selectOne(t);
     }
 
@@ -43,26 +48,25 @@ public class MembershipController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="")})
     @PostMapping("/v1/selectOneForWx")
     public ResultModel<Membership> selectOneForWx(@RequestParam("code") String code) {
-        String result = membershipService.getOpenId(code);
-        JSONObject json = JSONObject.parseObject(result);
-        String openId = json.getString("openid");
+        String openId = membershipService.getOpenId(code);
+        if (null == openId || "".equals(openId)) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
+        }
         Membership membership = new Membership();
         membership.setOpenId(openId);
         return membershipService.selectOne(membership);
     }
 
     @ApiOperation("增加会员(微信)")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name="code",value="code",required=true,paramType="form"),
-            @ApiImplicitParam(name="sex",value="性别",paramType="form",dataType="Integer"),
-            @ApiImplicitParam(name="name",value="姓名",paramType="form")
-    })
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "InsertForWxModel",dataTypeClass = InsertForWxModel.class , value ="")})
     @PostMapping("/v1/insertForWx")
-    public ResultModel<Membership> insertForWx(@RequestParam("code") String code,@RequestParam("sex") int sex,@RequestParam("name") String name) {
-        String result = membershipService.getOpenId(code);
-        JSONObject json = JSONObject.parseObject(result);
-        String openId = json.getString("openid");
-        return membershipService.insert(new Membership().setSex(sex).setOpenId(openId).setName(name));
+    public ResultModel<Membership> insertForWx(@RequestBody InsertForWxModel json) {
+        String code = json.getCode();
+        String openId = membershipService.getOpenId(code);
+        if (null == openId || "".equals(openId)) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
+        }
+        return membershipService.insert(new Membership().setSex(json.getSex()).setOpenId(openId).setName(json.getName()));
     }
 
     @ApiOperation("增加会员")

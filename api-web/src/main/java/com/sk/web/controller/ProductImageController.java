@@ -86,10 +86,10 @@ public class ProductImageController {
             //FileUtil.compressImage(crmConfig.getUploadUrl()+ fileName,100);
             FileUtil.uploadFile(FileUtil.compressImage(url+ fileName,100),url, fileName);
 
-            return new ResultModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setNote("/product_image/v1/getImage?path="+url+fileName);
+            return new ResultModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setMessage("/product_image/v1/getImage?path="+url+fileName);
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResultModel<ProductImage>().setCode(ResultEnum.ERROR.getCode()).setNote(ResultEnum.ERROR.getMsg());
+            return new ResultModel<ProductImage>().setCode(ResultEnum.ERROR.getCode()).setMessage(ResultEnum.ERROR.getMsg());
         }
     }
 

@@ -1,7 +1,10 @@
 package com.sk.web.service.imp;
 
+import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.sk.model.ResultEnum;
+import com.sk.model.ResultModel;
 import com.sk.utils.HttpUtil;
 import com.sk.web.constant.CommonConstant;
 import com.sk.web.mapper.MembershipMapper;
@@ -31,8 +34,14 @@ public class MembershipImpl extends BaseImpl<Membership, MembershipExample> impl
 
 
     public String getOpenId(String code) {
-        return HttpUtil.sendGet("https://api.weixin.qq.com/sns/jscode2session", "appid=wx398d94f63a862743&secret=69173f5518a3099be7c9995953f301f3&js_code="+code+"&grant_type=authorization_code");
+        if (null == code || "".equals(code)) {
+            return null;
+        }
+        String result = HttpUtil.sendGet("https://api.weixin.qq.com/sns/jscode2session", "appid=wx398d94f63a862743&secret=69173f5518a3099be7c9995953f301f3&js_code="+code+"&grant_type=authorization_code");
+        JSONObject json = JSONObject.parseObject(result);
+        if (!json.containsKey("openid")) {
+            return null;
+        }
+        return json.getString("openid");
     }
-
-
 }
