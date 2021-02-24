@@ -32,7 +32,7 @@ public class ProductInfoController {
     @ApiOperation("分页查询所有产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
     @PostMapping("/v1/selectPage")
-    public PageResult selectPage(@RequestBody PageRequest pageQuery){
+    public PageResult selectPage(@RequestBody PageRequest pageQuery,Productinfo t){
         return productInfoService.findPage(pageQuery);
     }
 

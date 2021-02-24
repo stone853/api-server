@@ -29,15 +29,15 @@ public class FileUtil {
      * compressImage
      *
      * @param path
-     * @param ppi
+     * @param
      * @return
      */
-    public static byte[] compressImage(String path, int ppi) {
+    public static byte[] compressImage(String path, int width,int height) {
         byte[] smallImage = null;
 
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
-            Thumbnails.of(path).size(ppi, ppi).outputFormat("png").toOutputStream(out);
+            Thumbnails.of(path).size(width, height).outputQuality(0.8).outputFormat("jpg").toOutputStream(out);
             smallImage = out.toByteArray();
             return smallImage;
         } catch (IOException e) {

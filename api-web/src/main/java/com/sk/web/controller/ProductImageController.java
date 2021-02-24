@@ -20,8 +20,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
@@ -81,8 +83,11 @@ public class ProductImageController {
         String url = crmConfig.getUploadUrl();
         try {
             FileUtil.uploadFile(file.getBytes(),url, fileName);
-            //FileUtil.compressImage(crmConfig.getUploadUrl()+ fileName,100);
-            FileUtil.uploadFile(FileUtil.compressImage(url+ fileName,100),url, fileName);
+
+            BufferedImage bim = ImageIO.read(file.getInputStream());
+            int imgWidth = bim.getWidth();
+            int imgHeight = bim.getHeight();
+            FileUtil.uploadFile(FileUtil.compressImage(url+ fileName,imgWidth,imgHeight),url, fileName);
 
             return new ResultModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setMessage("/product_image/v1/getImage?path="+url+fileName);
         } catch (Exception e) {
@@ -92,7 +97,7 @@ public class ProductImageController {
     }
 
     @ApiOperation("获取图片")
-    @RequestMapping("/v1/getImage")
+    @GetMapping("/v1/getImage")
     public void getImage (@RequestParam("path") String path) {
         try {
             File filePic = new File(path);
