@@ -11,5 +11,6 @@
     <result column="balance" jdbcType="DECIMAL" property="balance" />
     <result column="count" jdbcType="INTEGER" property="count" />
     <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="is_admin" jdbcType="SMALLINT" property="isAdmin" />
   </resultMap>
 </mapper>

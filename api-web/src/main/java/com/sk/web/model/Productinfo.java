@@ -5,6 +5,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Table(name = "tcrm_productinfo")
 public class Productinfo {
@@ -20,6 +21,58 @@ public class Productinfo {
     private String imgUrl;
 
     private String detail;
+
+    private BigDecimal price;
+
+    private BigDecimal priceDiscount;
+
+    private String tag;
+
+    private String subhead;
+
+    private String isDiscount;
+
+
+    public void setIsDiscount(String isDiscount) {
+        this.isDiscount = isDiscount;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public BigDecimal getPriceDiscount() {
+        return priceDiscount;
+    }
+
+    public void setPriceDiscount(BigDecimal priceDiscount) {
+        this.priceDiscount = priceDiscount;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setSubhead(String subhead) {
+        this.subhead = subhead;
+    }
+
+    public String getIsDiscount() {
+        return isDiscount;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getSubhead() {
+        return subhead;
+    }
+
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;

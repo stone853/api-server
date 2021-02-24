@@ -23,7 +23,16 @@ public class Membership {
 
     private String openId;
 
+    private Short isAdmin;
 
+    public Membership setIsAdmin(Short isAdmin) {
+        this.isAdmin = isAdmin;
+        return this;
+    }
+
+    public Short getIsAdmin() {
+        return isAdmin;
+    }
 
     public Membership setOpenId(String openId) {
         this.openId = openId;

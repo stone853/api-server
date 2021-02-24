@@ -7,6 +7,11 @@
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="price_discount" jdbcType="DECIMAL" property="priceDiscount" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="subhead" jdbcType="VARCHAR" property="subhead" />
+    <result column="is_discount" jdbcType="VARCHAR" property="isDiscount" />
   </resultMap>
 
 

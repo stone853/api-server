@@ -19,7 +19,9 @@ public class TcrmMembership {
 
     private Integer count;
 
-    private String openid;
+    private String openId;
+
+    private Short isAdmin;
 
     public Integer getId() {
         return id;
@@ -85,11 +87,19 @@ public class TcrmMembership {
         this.count = count;
     }
 
-    public String getOpenid() {
-        return openid;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
+    }
+
+    public Short getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Short isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }
