@@ -24,12 +24,8 @@ public class RefundInfoController {
     @ApiOperation("查询所有退款")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("refund",RefundInfoService.selectAll());
-
-
-        return map;
+    public ResultModel<RefundInfo> selectAll(RefundInfo t){
+        return RefundInfoService.selectAll(t);
     }
 
     @ApiOperation("查询单个退款")

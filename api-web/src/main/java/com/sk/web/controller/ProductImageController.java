@@ -47,10 +47,8 @@ public class ProductImageController {
     @ApiOperation("查询所有产品图片")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("product",productImageService.selectAll());
-        return map;
+    public ResultModel<ProductImage> selectAll(ProductImage t){
+        return productImageService.selectAll(t);
     }
 
     @ApiOperation("分页查询所有产品图片")

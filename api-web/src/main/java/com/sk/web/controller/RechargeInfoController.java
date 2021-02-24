@@ -24,12 +24,8 @@ public class RechargeInfoController {
     @ApiOperation("查询所有充值")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("recharge",RechargeInfoService.selectAll());
-
-
-        return map;
+    public ResultModel<RechargeInfo> selectAll(RechargeInfo t){
+        return RechargeInfoService.selectAll(t);
     }
 
     @ApiOperation("查询单个充值")

@@ -27,10 +27,8 @@ public class ConsumeController {
     @ApiOperation("查询所有消费")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(@RequestHeader("token") String token){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("consume",consumeService.selectAll());
-        return map;
+    public ResultModel<Consume> selectAll(@RequestHeader("token") String token,Consume t){
+        return consumeService.selectAll(t);
     }
 
     @ApiOperation("查询单个消费")

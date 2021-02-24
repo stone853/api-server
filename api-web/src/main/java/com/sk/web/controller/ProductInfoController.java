@@ -24,12 +24,9 @@ public class ProductInfoController {
     ProductInfoService productInfoService;
 
     @ApiOperation("查询所有产品")
-    @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("product",productInfoService.selectAll());
-        return map;
+    public ResultModel<Productinfo> selectAll(Productinfo t){
+        return productInfoService.selectAll(t);
     }
 
     @ApiOperation("分页查询所有产品")

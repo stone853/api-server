@@ -27,10 +27,8 @@ public class MembershipController {
     @ApiOperation("查询所有会员")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("membership",membershipService.selectAll());
-        return map;
+    public ResultModel<Membership> selectAll(Membership t){
+        return membershipService.selectAll(t);
     }
 
     @ApiOperation("查询单个会员")

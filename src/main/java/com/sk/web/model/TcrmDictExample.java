@@ -443,6 +443,146 @@ public class TcrmDictExample {
             addCriterion("mark not between", value1, value2, "mark");
             return (Criteria) this;
         }
+
+        public Criteria andLevelIsNull() {
+            addCriterion("level is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelIsNotNull() {
+            addCriterion("level is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelEqualTo(String value) {
+            addCriterion("level =", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelNotEqualTo(String value) {
+            addCriterion("level <>", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelGreaterThan(String value) {
+            addCriterion("level >", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelGreaterThanOrEqualTo(String value) {
+            addCriterion("level >=", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelLessThan(String value) {
+            addCriterion("level <", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelLessThanOrEqualTo(String value) {
+            addCriterion("level <=", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelLike(String value) {
+            addCriterion("level like", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelNotLike(String value) {
+            addCriterion("level not like", value, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelIn(List<String> values) {
+            addCriterion("level in", values, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelNotIn(List<String> values) {
+            addCriterion("level not in", values, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelBetween(String value1, String value2) {
+            addCriterion("level between", value1, value2, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andLevelNotBetween(String value1, String value2) {
+            addCriterion("level not between", value1, value2, "level");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafIsNull() {
+            addCriterion("is_leaf is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafIsNotNull() {
+            addCriterion("is_leaf is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafEqualTo(String value) {
+            addCriterion("is_leaf =", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafNotEqualTo(String value) {
+            addCriterion("is_leaf <>", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafGreaterThan(String value) {
+            addCriterion("is_leaf >", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafGreaterThanOrEqualTo(String value) {
+            addCriterion("is_leaf >=", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafLessThan(String value) {
+            addCriterion("is_leaf <", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafLessThanOrEqualTo(String value) {
+            addCriterion("is_leaf <=", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafLike(String value) {
+            addCriterion("is_leaf like", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafNotLike(String value) {
+            addCriterion("is_leaf not like", value, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafIn(List<String> values) {
+            addCriterion("is_leaf in", values, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafNotIn(List<String> values) {
+            addCriterion("is_leaf not in", values, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafBetween(String value1, String value2) {
+            addCriterion("is_leaf between", value1, value2, "isLeaf");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsLeafNotBetween(String value1, String value2) {
+            addCriterion("is_leaf not between", value1, value2, "isLeaf");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

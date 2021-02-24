@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sk.web.dao.TcrmDictMapper">
+  <resultMap id="BaseResultMap" type="com.sk.web.model.Dict">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="is_leaf" jdbcType="VARCHAR" property="isLeaf" />
+  </resultMap>
+
+</mapper>

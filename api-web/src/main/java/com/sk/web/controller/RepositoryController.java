@@ -24,10 +24,8 @@ public class RepositoryController {
     @ApiOperation("查询所有库存信息")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("repository",repositoryService.selectAll());
-        return map;
+    public ResultModel<Repository> selectAll(Repository t){
+        return repositoryService.selectAll(t);
     }
 
     @ApiOperation("查询单个库存")

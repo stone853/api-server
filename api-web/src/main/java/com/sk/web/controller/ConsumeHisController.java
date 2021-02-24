@@ -24,12 +24,8 @@ public class ConsumeHisController {
     @ApiOperation("查询所有消费历史")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("consume_his",ConsumeHisService.selectAll());
-
-
-        return map;
+    public ResultModel<ConsumeHis> selectAll(ConsumeHis t){
+        return ConsumeHisService.selectAll(t);
     }
 
     @ApiOperation("查询单个消费历史")

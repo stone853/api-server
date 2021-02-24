@@ -4,7 +4,6 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "tcrm_repository")
 public class RepositoryExample {
     protected String orderByClause;
 

@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "tcrm_consume_detail")
 public class ConsumeDetailExample {
     protected String orderByClause;
 

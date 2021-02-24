@@ -24,10 +24,8 @@ public class PurchaseController {
     @ApiOperation("查询进货信息")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public Map<String, Object> selectAll(){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("purchase",PurchaseService.selectAll());
-        return map;
+    public ResultModel<Purchase> selectAll(Purchase t){
+        return PurchaseService.selectAll(t);
     }
 
     @ApiOperation("查询单个进货")

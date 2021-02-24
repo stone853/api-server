@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Table(name = "tcrm_consume")
 public class ConsumeExample {
     protected String orderByClause;
 

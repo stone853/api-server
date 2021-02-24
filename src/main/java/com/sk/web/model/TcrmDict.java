@@ -11,6 +11,10 @@ public class TcrmDict {
 
     private String mark;
 
+    private String level;
+
+    private String isLeaf;
+
     public Integer getId() {
         return id;
     }
@@ -49,5 +53,21 @@ public class TcrmDict {
 
     public void setMark(String mark) {
         this.mark = mark == null ? null : mark.trim();
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level == null ? null : level.trim();
+    }
+
+    public String getIsLeaf() {
+        return isLeaf;
+    }
+
+    public void setIsLeaf(String isLeaf) {
+        this.isLeaf = isLeaf == null ? null : isLeaf.trim();
     }
 }

@@ -4,7 +4,6 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "tcrm_product_image")
 public class ProductImageExample {
     protected String orderByClause;
 
