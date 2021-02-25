@@ -31,7 +31,7 @@ public class ConsumeDetailController {
     @ApiOperation("查询单个消费明细")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ConsumeDetail",dataTypeClass = ConsumeDetail.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<ConsumeDetail> selectOne(@RequestBody ConsumeDetail t){
+    public ResultModel<ConsumeDetail> selectOne(ConsumeDetail t){
         return ConsumeDetailService.selectOne(t);
     }
 

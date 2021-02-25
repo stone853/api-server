@@ -53,12 +53,12 @@ public class ProductImageController {
         return productImageService.selectAll(t);
     }
 
-    @ApiOperation("分页查询所有产品图片")
-    @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
-    @PostMapping("/v1/selectPage")
-    public PageResult selectPage(@RequestBody PageRequest pageQuery){
-        return productImageService.findPage(pageQuery);
-    }
+//    @ApiOperation("分页查询所有产品图片")
+//    @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
+//    @PostMapping("/v1/selectPage")
+//    public PageResult selectPage(@RequestBody PageRequest pageQuery){
+//        return productImageService.findPage(pageQuery);
+//    }
 
 
     @ApiOperation("查询单个产品图片")

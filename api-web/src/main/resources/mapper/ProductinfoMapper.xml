@@ -23,9 +23,27 @@
 <!--  </select>-->
 
 
-  <select id="selectPage"  resultMap="BaseResultMap">
+  <select id="selectPage"  resultMap="BaseResultMap" parameterType="com.sk.web.model.Productinfo">
     select
     *
-    from tcrm_productinfo
+    from tcrm_productinfo where 1=1
+    <if test="id != null and id != ''">
+     and id=#{id}
+    </if>
+    <if test="isDiscount != null and isDiscount != ''">
+      and is_discount=#{isDiscount}
+    </if>
+    <if test="name != null and name != ''">
+      and name=#{name}
+    </if>
+    <if test="type != null and type != ''">
+      and name=#{type}
+    </if>
+    <if test="tag != null and tag != ''">
+      and name=#{tag}
+    </if>
+    <if test="subhead != null and subhead != ''">
+      and name=#{subhead}
+    </if>
   </select>
 </mapper>

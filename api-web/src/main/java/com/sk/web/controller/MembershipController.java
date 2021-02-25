@@ -33,8 +33,8 @@ public class MembershipController {
 
     @ApiOperation("查询单个会员")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
-    @PostMapping("/v1/selectOne")
-    public ResultModel<Membership> selectOne(@RequestBody Membership t){
+    @GetMapping("/v1/selectOne")
+    public ResultModel<Membership> selectOne(Membership t){
         if (t == null || null == t.getId() || "".equals(t.getId())) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("id不能为空");
         }

@@ -31,7 +31,7 @@ public class ConsumeHisController {
     @ApiOperation("查询单个消费历史")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ConsumeHis",dataTypeClass = ConsumeHis.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<ConsumeHis> selectOne(@RequestBody ConsumeHis t){
+    public ResultModel<ConsumeHis> selectOne(ConsumeHis t){
         return ConsumeHisService.selectOne(t);
     }
 

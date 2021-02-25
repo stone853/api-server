@@ -31,7 +31,7 @@ public class RefundInfoController {
     @ApiOperation("查询单个退款")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "RefundInfo",dataTypeClass = RefundInfo.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<RefundInfo> selectOne(@RequestBody RefundInfo t){
+    public ResultModel<RefundInfo> selectOne(RefundInfo t){
         return RefundInfoService.selectOne(t);
     }
 

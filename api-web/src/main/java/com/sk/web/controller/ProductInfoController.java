@@ -31,16 +31,16 @@ public class ProductInfoController {
 
     @ApiOperation("分页查询所有产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
-    @PostMapping("/v1/selectPage")
-    public PageResult selectPage(@RequestBody PageRequest pageQuery,Productinfo t){
-        return productInfoService.findPage(pageQuery);
+    @GetMapping("/v1/selectPage")
+    public PageResult selectPage(PageRequest pageQuery,Productinfo t){
+        return productInfoService.findPage(pageQuery,t);
     }
 
 
     @ApiOperation("查询单个产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
-    @PostMapping("/v1/selectOne")
-    public ResultModel<Productinfo> selectOne(@RequestBody Productinfo t){
+    @GetMapping("/v1/selectOne")
+    public ResultModel<Productinfo> selectOne(Productinfo t){
         return productInfoService.selectOne(t);
     }
 

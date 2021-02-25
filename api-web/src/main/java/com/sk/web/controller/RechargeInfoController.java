@@ -31,7 +31,7 @@ public class RechargeInfoController {
     @ApiOperation("查询单个充值")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "RechargeInfo",dataTypeClass = RechargeInfo.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<RechargeInfo> selectOne(@RequestBody RechargeInfo t){
+    public ResultModel<RechargeInfo> selectOne(RechargeInfo t){
         return RechargeInfoService.selectOne(t);
     }
 

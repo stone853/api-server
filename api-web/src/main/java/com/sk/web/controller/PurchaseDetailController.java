@@ -31,7 +31,7 @@ public class PurchaseDetailController {
     @ApiOperation("查询单个进货详情")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "PurchaseDetail",dataTypeClass = PurchaseDetail.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<PurchaseDetail> selectOne(@RequestBody PurchaseDetail t){
+    public ResultModel<PurchaseDetail> selectOne(PurchaseDetail t){
         return PurchaseDetailService.selectOne(t);
     }
 

@@ -57,8 +57,8 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
     }
 
 
-    public PageResult findPage(PageRequest pageRequest) {
-        return PageUtils.getPageResult(pageRequest, getPageInfo(pageRequest));
+    public PageResult findPage(PageRequest pageRequest,T t) {
+        return PageUtils.getPageResult(pageRequest, getPageInfo(pageRequest,t));
     }
 
     /**
@@ -66,11 +66,11 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
      * @param
      * @return
      */
-    private PageInfo<T> getPageInfo(PageRequest pageRequest) {
+    private PageInfo<T> getPageInfo(PageRequest pageRequest,T t) {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        List<T> sysMenus = mapper.selectPage();
+        List<T> sysMenus = mapper.selectPage(t);
         return new PageInfo<T>(sysMenus);
     }
 

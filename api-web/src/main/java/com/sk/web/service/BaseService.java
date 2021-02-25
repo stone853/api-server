@@ -11,5 +11,5 @@ public interface BaseService<T,T1> {
     ResultModel<T> insert(T record);
     ResultModel<T> update (T record,T1 object);
     ResultModel<T> delete (T record);
-    PageResult findPage(PageRequest pageRequest);
+    PageResult findPage(PageRequest pageRequest,T t);
 }
