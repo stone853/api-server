@@ -1,6 +1,7 @@
 package com.sk.web.controller;
 
 import com.sk.model.ResultModel;
+import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.ConsumeDetail;
 import com.sk.web.model.ConsumeDetailExample;
 import com.sk.web.service.ConsumeDetailService;
@@ -16,7 +17,7 @@ import java.util.Map;
 
 @Api(tags = "消费明细信息")
 @RestController
-@RequestMapping("/consume_detail")
+@RequestMapping(RequestCommonPathConstant.REQUEST_PROJECT_PATH+"/consume_detail")
 public class ConsumeDetailController {
     @Autowired
     ConsumeDetailService ConsumeDetailService;

@@ -5,6 +5,7 @@ import com.sk.model.ResultModel;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.web.config.CrmConfig;
+import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.ProductImage;
 import com.sk.web.model.ProductImageExample;
 import com.sk.web.service.ProductImageService;
@@ -33,7 +34,7 @@ import java.util.Map;
 
 @Api(tags = "产品图片")
 @RestController
-@RequestMapping("/product_image")
+@RequestMapping(RequestCommonPathConstant.REQUEST_PROJECT_PATH+"/product_image")
 public class ProductImageController {
     Logger log = LoggerFactory.getLogger(ProductImageController.class);
 
@@ -49,7 +50,7 @@ public class ProductImageController {
     @ApiOperation("查询所有产品图片")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public ResultModel<ProductImage> selectAll(ProductImage t){
+    public ResultModel<ProductImage> selectAll(@RequestHeader("token") String token,ProductImage t){
         return productImageService.selectAll(t);
     }
 
@@ -78,7 +79,7 @@ public class ProductImageController {
 
     @ApiOperation("上传图片")
     @PostMapping("/v1/upload")
-    public ResultModel uploadImg(@RequestParam("file") MultipartFile file) {
+    public ResultModel uploadImg(@RequestHeader("token") String token,@RequestParam("file") MultipartFile file) {
         String fileName = file.getOriginalFilename();
         String url = crmConfig.getUploadUrl();
         try {
@@ -122,14 +123,14 @@ public class ProductImageController {
         @ApiOperation("删除产品图片")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ProductImage",dataTypeClass = ProductImage.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<ProductImage> delete(@RequestBody ProductImage t){
+    public ResultModel<ProductImage> delete(@RequestHeader("token") String token,@RequestBody ProductImage t){
         return productImageService.delete(t);
     }
 
     @ApiOperation("更新产品图片")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ProductImage",dataTypeClass = ProductImage.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<ProductImage> update(@RequestBody ProductImage t){
+    public ResultModel<ProductImage> update(@RequestHeader("token") String token,@RequestBody ProductImage t){
         ProductImageExample e = new ProductImageExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return productImageService.update(t,e);

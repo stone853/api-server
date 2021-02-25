@@ -6,5 +6,5 @@ package com.sk.web.constant;
  * @Version 1.0
  */
 public class CommonConstant {
-    public static final long EXPIRE_TIME = 15 * 60 * 1000;
+    public static final long EXPIRE_TIME = 24 * 60 * 60 * 1000;
 }

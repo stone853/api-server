@@ -3,6 +3,7 @@ package com.sk.web.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
+import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Membership;
 import com.sk.web.model.MembershipExample;
 import com.sk.web.model.api.InsertForWxModel;
@@ -19,7 +20,7 @@ import java.util.Map;
 
 @Api(tags = "会员信息")
 @RestController
-@RequestMapping("/membership")
+@RequestMapping(RequestCommonPathConstant.REQUEST_PROJECT_PATH+"/membership")
 public class MembershipController {
     @Autowired
     MembershipService membershipService;
@@ -27,14 +28,14 @@ public class MembershipController {
     @ApiOperation("查询所有会员")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public ResultModel<Membership> selectAll(Membership t){
+    public ResultModel<Membership> selectAll(@RequestHeader("token") String token,Membership t){
         return membershipService.selectAll(t);
     }
 
     @ApiOperation("查询单个会员")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<Membership> selectOne(Membership t){
+    public ResultModel<Membership> selectOne(@RequestHeader("token") String token,Membership t){
         if (t == null || null == t.getId() || "".equals(t.getId())) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("id不能为空");
         }
@@ -45,7 +46,7 @@ public class MembershipController {
     @ApiOperation("查询单个会员(微信)")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="")})
     @PostMapping("/v1/selectOneForWx")
-    public ResultModel<Membership> selectOneForWx(@RequestParam("code") String code) {
+    public ResultModel<Membership> selectOneForWx(@RequestHeader("token") String token,@RequestParam("code") String code) {
         String openId = membershipService.getOpenId(code);
         if (null == openId || "".equals(openId)) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
@@ -58,33 +59,33 @@ public class MembershipController {
     @ApiOperation("增加会员(微信)")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "InsertForWxModel",dataTypeClass = InsertForWxModel.class , value ="")})
     @PostMapping("/v1/insertForWx")
-    public ResultModel<Membership> insertForWx(@RequestBody InsertForWxModel json) {
+    public ResultModel<Membership> insertForWx(@RequestHeader("token") String token,@RequestBody InsertForWxModel json) {
         String code = json.getCode();
         String openId = membershipService.getOpenId(code);
         if (null == openId || "".equals(openId)) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }
-        return membershipService.insert(new Membership().setSex(json.getSex()).setOpenId(openId).setName(json.getName()));
+        return membershipService.insert(new Membership().setSex(json.getSex()).setOpenId(openId).setName(json.getName()).setPassword("666666"));
     }
 
     @ApiOperation("增加会员")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<Membership> insert(@RequestBody Membership t) {
+    public ResultModel<Membership> insert(@RequestHeader("token") String token,@RequestBody Membership t) {
         return membershipService.insert(t);
     }
 
     @ApiOperation("删除会员")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<Membership> delete(@RequestBody Membership t){
+    public ResultModel<Membership> delete(@RequestHeader("token") String token,@RequestBody Membership t){
         return membershipService.delete(t);
     }
 
     @ApiOperation("更新会员信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<Membership> update(@RequestBody Membership t){
+    public ResultModel<Membership> update(@RequestHeader("token") String token,@RequestBody Membership t){
         MembershipExample e = new MembershipExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return membershipService.update(t,e);

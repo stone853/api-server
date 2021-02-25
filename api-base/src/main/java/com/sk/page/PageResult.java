@@ -9,6 +9,26 @@ package com.sk.page;
 import java.util.List;
 
 public class PageResult {
+    private int code;
+
+    private String message;
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
     /**
      * 当前页码
      */
@@ -28,7 +48,7 @@ public class PageResult {
     /**
      * 数据模型
      */
-    private List<?> content;
+    private List<?> list;
     public int getPageNum() {
         return pageNum;
     }
@@ -53,10 +73,10 @@ public class PageResult {
     public void setTotalPages(int totalPages) {
         this.totalPages = totalPages;
     }
-    public List<?> getContent() {
-        return content;
+    public List<?> getList() {
+        return list;
     }
-    public void setContent(List<?> content) {
-        this.content = content;
+    public void setList(List<?> list) {
+        this.list = list;
     }
 }

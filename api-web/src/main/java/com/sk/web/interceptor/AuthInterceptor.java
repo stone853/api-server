@@ -5,6 +5,8 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.sk.exception.BizException;
+import com.sk.model.ResultModel;
 import com.sk.web.model.Membership;
 import com.sk.web.service.MembershipService;
 import com.sk.web.service.imp.MembershipImpl;
@@ -32,39 +34,38 @@ public class AuthInterceptor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         start = System.currentTimeMillis();
-//        String token = request.getHeader("token");// 从 http 请求头中取出 token
-//        // 如果不是映射到方法直接通过
-//        if(!(handler instanceof HandlerMethod)){
-//            return true;
-//        }
-//
-//        // 执行认证
-//        if (token == null) {
-//            throw new RuntimeException("无token，请重新登录");
-//        }
-//        // 获取 token 中的 user name
-//        Membership user = new Membership();
-//        try {
-//            user.setName(JWT.decode(token).getAudience().get(0));
-//        } catch (JWTDecodeException j) {
-//            throw new RuntimeException("401");
-//        }
-//        //MembershipService service = getMembershipService();
-//        user = service.selectOne(user);
-//        if (user == null) {
-//            throw new RuntimeException("用户不存在，请重新登录");
-//        }
-//        // 验证 token
-//        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(user.getpassword())).build();
-//        try {
-//            jwtVerifier.verify(token);
-//
-//        } catch (JWTVerificationException e) {
-//            throw new RuntimeException("401");
-//        }
+        String token = request.getHeader("token");// 从 http 请求头中取出 token
+        // 如果不是映射到方法直接通过
+        if(!(handler instanceof HandlerMethod)){
             return true;
+        }
 
+        // 执行认证
+        if (token == null) {
+            throw new BizException("401","无token，请重新登录");
+        }
+        // 获取 token 中的 user name
+        Membership t = new Membership();
+        try {
+            t.setName(JWT.decode(token).getAudience().get(0));
+        } catch (JWTDecodeException j) {
+            throw new BizException("401","token获取用户信息失败");
+        }
+        //MembershipService service = getMembershipService();
+        ResultModel<Membership> resultModel = service.selectOne(t);
+        if (resultModel.getCode() <0 || null == resultModel.getList() || resultModel.getList().size() ==0) {
+            throw new BizException("401","用户不存在，请重新登录");
+        }
 
+        // 验证 token
+        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(resultModel.getList().get(0).getPassword())).build();
+        try {
+            jwtVerifier.verify(token);
+        } catch (JWTVerificationException e) {
+            throw new BizException("401","token验证失败");
+        }
+
+        return true;
     }
 
     //postHandler是在请求结束之后,视图渲染之前执行的,但只有preHandle方法返回true的时候才会执行

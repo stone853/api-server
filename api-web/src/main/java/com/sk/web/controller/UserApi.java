@@ -1,6 +1,7 @@
 package com.sk.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
 import com.sk.web.model.Consume;
 import com.sk.web.model.Membership;
@@ -24,19 +25,19 @@ public class UserApi {
     MembershipService membershipService;
 
     @ApiOperation("登陆")
-    @ApiImplicitParams(value = {@ApiImplicitParam(name = "User",dataTypeClass = User.class , value ="")})
-    @PostMapping("/v1/login")
-    public Object login(@RequestBody User user){
-        JSONObject jsonObject=new JSONObject();
-        ResultModel<Membership> userForBase= membershipService.selectOne(new Membership().setName(user.getName()).setPassword(user.getPassword()));
-        if(userForBase==null){
-            jsonObject.put("message","用户名或密码错误");
-            return jsonObject;
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="")})
+    @GetMapping("/v1/login")
+    public ResultModel<Membership> login(@RequestParam("code") String code){
+        String openId = membershipService.getOpenId(code);
+        if (null == openId || "".equals(openId)) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }
-        String token = membershipService.getToken(userForBase.getList().get(0));
-        jsonObject.put("token", token);
-        jsonObject.put("user", userForBase);
-        return jsonObject;
+        ResultModel<Membership> resultModel= membershipService.selectOne(new Membership().setOpenId(openId));
+        if(resultModel.getCode() < 0 || resultModel.getList() == null ||
+                resultModel.getList().size() == 0 || resultModel.getList().get(0) == null){
+            return new ResultModel<Membership>().setCode(ResultEnum.ERROR.getCode()).setMessage("通过openid获取用户信息失败");
+        }
+        return new ResultModel<Membership>().setCode(ResultEnum.SUCCESS.getCode()).setMessage(membershipService.getToken(resultModel.getList().get(0)));
     }
 
     @GetMapping("/getMessage")

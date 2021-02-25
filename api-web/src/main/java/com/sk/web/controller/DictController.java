@@ -1,6 +1,7 @@
 package com.sk.web.controller;
 
 import com.sk.model.ResultModel;
+import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Dict;
 import com.sk.web.service.DictService;
 import io.swagger.annotations.Api;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(tags = "字典")
 @RestController
-@RequestMapping("/dict")
+@RequestMapping(RequestCommonPathConstant.REQUEST_PROJECT_PATH+"/dict")
 public class DictController {
     Logger log = LoggerFactory.getLogger(DictController.class);
 

@@ -29,7 +29,8 @@ public class WebMvcConfigurerAdapter extends WebMvcConfigurationSupport {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加拦截接口请求处理，
-        registry.addInterceptor(authInterceptor).addPathPatterns("/crm/**");
+        registry.addInterceptor(authInterceptor).addPathPatterns("/crm/**")
+        .excludePathPatterns("/crm/product_image/**");
     }
 
     @Override

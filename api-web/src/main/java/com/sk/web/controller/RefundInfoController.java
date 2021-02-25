@@ -1,6 +1,7 @@
 package com.sk.web.controller;
 
 import com.sk.model.ResultModel;
+import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.RefundInfo;
 import com.sk.web.model.RefundInfoExample;
 import com.sk.web.service.RefundInfoService;
@@ -16,7 +17,7 @@ import java.util.Map;
 
 @Api(tags = "退款信息")
 @RestController
-@RequestMapping("/refund")
+@RequestMapping(RequestCommonPathConstant.REQUEST_PROJECT_PATH+"/refund")
 public class RefundInfoController {
     @Autowired
     RefundInfoService RefundInfoService;
@@ -24,35 +25,35 @@ public class RefundInfoController {
     @ApiOperation("查询所有退款")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public ResultModel<RefundInfo> selectAll(RefundInfo t){
+    public ResultModel<RefundInfo> selectAll(@RequestHeader("token") String token,RefundInfo t){
         return RefundInfoService.selectAll(t);
     }
 
     @ApiOperation("查询单个退款")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "RefundInfo",dataTypeClass = RefundInfo.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<RefundInfo> selectOne(RefundInfo t){
+    public ResultModel<RefundInfo> selectOne(@RequestHeader("token") String token,RefundInfo t){
         return RefundInfoService.selectOne(t);
     }
 
     @ApiOperation("增加退款")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "RefundInfo",dataTypeClass = RefundInfo.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<RefundInfo> insert(@RequestBody RefundInfo t) {
+    public ResultModel<RefundInfo> insert(@RequestHeader("token") String token,@RequestBody RefundInfo t) {
         return RefundInfoService.insert(t);
     }
 
     @ApiOperation("删除退款")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "RefundInfo",dataTypeClass = RefundInfo.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<RefundInfo> delete(@RequestBody RefundInfo t){
+    public ResultModel<RefundInfo> delete(@RequestHeader("token") String token,@RequestBody RefundInfo t){
         return RefundInfoService.delete(t);
     }
 
     @ApiOperation("更新退款信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "RefundInfo",dataTypeClass = RefundInfo.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<RefundInfo> update(@RequestBody RefundInfo t){
+    public ResultModel<RefundInfo> update(@RequestHeader("token") String token,@RequestBody RefundInfo t){
         RefundInfoExample e = new RefundInfoExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return RefundInfoService.update(t,e);
