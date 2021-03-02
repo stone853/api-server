@@ -5,8 +5,6 @@ import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Dict;
 import com.sk.web.service.DictService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -23,6 +23,10 @@ public class TcrmProductinfo {
 
     private String isDiscount;
 
+    private String createtime;
+
+    private Integer orderNumber;
+
     public Integer getId() {
         return id;
     }
@@ -101,5 +105,21 @@ public class TcrmProductinfo {
 
     public void setIsDiscount(String isDiscount) {
         this.isDiscount = isDiscount == null ? null : isDiscount.trim();
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime == null ? null : createtime.trim();
+    }
+
+    public Integer getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(Integer orderNumber) {
+        this.orderNumber = orderNumber;
     }
 }

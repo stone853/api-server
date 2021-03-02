@@ -1,19 +1,14 @@
 package com.sk.web.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
-import com.sk.web.model.Consume;
 import com.sk.web.model.Membership;
-import com.sk.web.model.RechargeInfo;
-import com.sk.web.model.User;
 import com.sk.web.service.MembershipService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 

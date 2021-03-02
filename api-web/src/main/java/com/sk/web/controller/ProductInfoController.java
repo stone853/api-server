@@ -12,8 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Api(tags = "产品信息")
 @RestController
@@ -49,6 +50,7 @@ public class ProductInfoController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "productInfo",dataTypeClass = Productinfo.class , value ="")})
     @PostMapping("/v1/insert")
     public ResultModel<Productinfo> insert(@RequestHeader("token") String token,@RequestBody Productinfo t) {
+        t.setCreatetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         return productInfoService.insert(t);
     }
 
@@ -67,5 +69,7 @@ public class ProductInfoController {
         e.createCriteria().andIdEqualTo(t.getId());
         return productInfoService.update(t,e);
     }
+
+
 
 }

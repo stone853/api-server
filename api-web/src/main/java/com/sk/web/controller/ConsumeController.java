@@ -1,7 +1,6 @@
 package com.sk.web.controller;
 
 
-import com.sk.exception.BizException;
 import com.sk.model.ResultModel;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Consume;
@@ -14,8 +13,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
 
 @Api(tags = "消费信息")
 @RestController
@@ -27,7 +24,7 @@ public class ConsumeController {
     @ApiOperation("查询所有消费")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public ResultModel<Consume> selectAll(@RequestHeader("token") String token,Consume t){
+    public ResultModel<Consume> selectAll(@RequestHeader("token") String token, Consume t){
         return consumeService.selectAll(t);
     }
 

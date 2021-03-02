@@ -12,6 +12,8 @@
     <result column="tag" jdbcType="VARCHAR" property="tag" />
     <result column="subhead" jdbcType="VARCHAR" property="subhead" />
     <result column="is_discount" jdbcType="VARCHAR" property="isDiscount" />
+    <result column="createtime" jdbcType="VARCHAR" property="createtime" />
+    <result column="order_number" jdbcType="INTEGER" property="orderNumber" />
   </resultMap>
 
 
@@ -34,16 +36,17 @@
       and is_discount=#{isDiscount}
     </if>
     <if test="name != null and name != ''">
-      and name=#{name}
+      and name like '%${name}%'
     </if>
     <if test="type != null and type != ''">
-      and name=#{type}
+      and type=#{type}
     </if>
     <if test="tag != null and tag != ''">
-      and name=#{tag}
+      and tag=#{tag}
     </if>
     <if test="subhead != null and subhead != ''">
-      and name=#{subhead}
+      and subhead=#{subhead}
     </if>
+     order by createtime desc
   </select>
 </mapper>

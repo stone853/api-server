@@ -2,8 +2,6 @@ package com.sk.web.controller;
 
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
-import com.sk.page.PageRequest;
-import com.sk.page.PageResult;
 import com.sk.web.config.CrmConfig;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.ProductImage;
@@ -22,15 +20,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
-import java.rmi.server.ExportException;
-import java.util.HashMap;
-import java.util.Map;
 
 @Api(tags = "产品图片")
 @RestController

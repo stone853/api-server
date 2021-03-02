@@ -32,6 +32,26 @@ public class Productinfo {
 
     private String isDiscount;
 
+    private String createtime;
+
+    private Integer orderNumber;
+
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
+    }
+
+    public Integer getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(Integer orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
 
     public void setIsDiscount(String isDiscount) {
         this.isDiscount = isDiscount;

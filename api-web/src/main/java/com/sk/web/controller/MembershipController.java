@@ -1,6 +1,5 @@
 package com.sk.web.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
 import com.sk.web.constant.RequestCommonPathConstant;
@@ -15,8 +14,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
 
 @Api(tags = "会员信息")
 @RestController
