@@ -45,7 +45,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 //        // 获取 token 中的 user name
 //        Membership t = new Membership();
 //        try {
-//            t.setName(JWT.decode(token).getAudience().get(0));
+//            t.setPhone(JWT.decode(token).getAudience().get(0));
 //        } catch (JWTDecodeException j) {
 //            throw new BizException("401","token获取用户信息失败");
 //        }

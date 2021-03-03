@@ -39,8 +39,9 @@ public class CouponPublish {
         return couponCode;
     }
 
-    public void setCouponCode(String couponCode) {
+    public CouponPublish setCouponCode(String couponCode) {
         this.couponCode = couponCode == null ? null : couponCode.trim();
+        return this;
     }
 
     public BigDecimal getCouponValue() {
@@ -79,8 +80,9 @@ public class CouponPublish {
         return publishTime;
     }
 
-    public void setPublishTime(String publishTime) {
+    public CouponPublish setPublishTime(String publishTime) {
         this.publishTime = publishTime == null ? null : publishTime.trim();
+        return this;
     }
 
     public String getStartTime() {

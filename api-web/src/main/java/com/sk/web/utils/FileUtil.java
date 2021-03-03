@@ -1,5 +1,7 @@
 package com.sk.web.utils;
 
+import com.auth0.jwt.JWT;
+import com.sk.exception.BizException;
 import net.coobird.thumbnailator.Thumbnails;
 
 import java.io.ByteArrayOutputStream;
@@ -46,4 +48,6 @@ public class FileUtil {
         }
         return null;
     }
+
+
 }

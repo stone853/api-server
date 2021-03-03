@@ -7,6 +7,7 @@ import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.CouponPublish;
 import com.sk.web.model.CouponPublishExample;
 import com.sk.web.service.CouponPublishService;
+import com.sk.web.utils.UserHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 @Api(tags = "优惠券发布")
 @RestController
@@ -53,7 +55,8 @@ public class CouponPublishController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponPublish",dataTypeClass = CouponPublish.class , value ="")})
     @PostMapping("/v1/insert")
     public ResultModel<CouponPublish> insert(@RequestHeader("token") String token,@RequestBody CouponPublish t) {
-        t.setPublishTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        t.setPublishTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()))
+            .setCouponCode(UUID.randomUUID().toString());
         return couponPublishService.insert(t);
     }
 
@@ -72,7 +75,5 @@ public class CouponPublishController {
         e.createCriteria().andIdEqualTo(t.getId());
         return couponPublishService.update(t,e);
     }
-
-
 
 }

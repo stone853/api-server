@@ -2,9 +2,7 @@ package com.sk.web.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.algorithms.Algorithm;
-import com.sk.model.ResultEnum;
-import com.sk.model.ResultModel;
+import com.auth0.jwt.algorithms.Algorithm;;
 import com.sk.utils.HttpUtil;
 import com.sk.web.constant.CommonConstant;
 import com.sk.web.mapper.MembershipMapper;
@@ -23,12 +21,12 @@ public class MembershipImpl extends BaseImpl<Membership, MembershipExample> impl
         this.mapper = mapper;
     }
 
-    public String getToken(Membership user) {
+    public String getToken(Membership t) {
         System.out.println(new Date(System.currentTimeMillis() + CommonConstant.EXPIRE_TIME));
         String token="";
         token= JWT.create().withExpiresAt(new Date(System.currentTimeMillis() + CommonConstant.EXPIRE_TIME))
-                .withAudience(String.valueOf(user.getName()))
-                .sign(Algorithm.HMAC256(user.getPassword()));
+                .withAudience(String.valueOf(t.getPhone()))
+                .sign(Algorithm.HMAC256(t.getPassword()));
         return token;
     }
 
