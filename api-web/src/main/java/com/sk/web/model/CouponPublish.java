@@ -72,8 +72,9 @@ public class CouponPublish {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public CouponPublish setCount(Integer count) {
         this.count = count;
+        return this;
     }
 
     public String getPublishTime() {

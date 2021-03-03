@@ -22,12 +22,9 @@ public class MembershipImpl extends BaseImpl<Membership, MembershipExample> impl
     }
 
     public String getToken(Membership t) {
-        System.out.println(new Date(System.currentTimeMillis() + CommonConstant.EXPIRE_TIME));
-        String token="";
-        token= JWT.create().withExpiresAt(new Date(System.currentTimeMillis() + CommonConstant.EXPIRE_TIME))
+        return JWT.create().withExpiresAt(new Date(System.currentTimeMillis() + CommonConstant.EXPIRE_TIME))
                 .withAudience(String.valueOf(t.getPhone()))
                 .sign(Algorithm.HMAC256(t.getPassword()));
-        return token;
     }
 
 
