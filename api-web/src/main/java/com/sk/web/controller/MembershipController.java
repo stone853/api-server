@@ -44,7 +44,7 @@ public class MembershipController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="")})
     @PostMapping("/v1/selectOneForWx")
     public ResultModel<Membership> selectOneForWx(@RequestHeader("token") String token,@RequestParam("code") String code) {
-        String openId = membershipService.getOpenId(code);
+        String openId = membershipService.getOpenId(2,code);
         if (null == openId || "".equals(openId)) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }
@@ -58,7 +58,7 @@ public class MembershipController {
     @PostMapping("/v1/insertForWx")
     public ResultModel<Membership> insertForWx(@RequestHeader("token") String token,@RequestBody InsertForWxModel json) {
         String code = json.getCode();
-        String openId = membershipService.getOpenId(code);
+        String openId = membershipService.getOpenId(2,code);
         if (null == openId || "".equals(openId)) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }

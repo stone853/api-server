@@ -23,7 +23,7 @@ public class UserApi {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="")})
     @GetMapping("/v1/login")
     public ResultModel<Membership> login(@RequestParam("code") String code){
-        String openId = membershipService.getOpenId(code);
+        String openId = membershipService.getOpenId(2,code);
         if (null == openId || "".equals(openId)) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }

@@ -1,10 +1,12 @@
 package com.sk.web.model;
 
+import com.sk.web.model.api.BaseModel;
+
 import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Table(name = "tcrm_consume_detail")
-public class ConsumeDetail {
+public class ConsumeDetail extends BaseModel {
     private Integer id;
 
     private Integer consumeId;

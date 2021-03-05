@@ -1,9 +1,11 @@
 package com.sk.web.model;
 
+import com.sk.web.model.api.BaseModel;
+
 import javax.persistence.Table;
 
 @Table(name = "tcrm_repository")
-public class Repository {
+public class Repository extends BaseModel {
     private Integer id;
 
     private Integer productId;

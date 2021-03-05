@@ -1,10 +1,12 @@
 package com.sk.web.model;
 
+import com.sk.web.model.api.BaseModel;
+
 import javax.persistence.Table;
 import java.util.Date;
 
 @Table(name = "tcrm_refundinfo")
-public class RefundInfo {
+public class RefundInfo extends BaseModel {
     private Integer id;
 
     private Integer chargeId;

@@ -1,14 +1,16 @@
 package com.sk.web.controller;
 
-import com.sk.model.ResultEnum;
+import com.auth0.jwt.JWT;
 import com.sk.model.ResultModel;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.CouponInfo;
 import com.sk.web.model.CouponInfoExample;
-import com.sk.web.model.api.CouponInsertForWxModel;
+import com.sk.web.model.api.BaseModel;
 import com.sk.web.service.CouponInfoService;
+import com.sk.web.service.MembershipService;
+import com.sk.web.utils.UserHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -28,8 +30,6 @@ public class CouponInfoController {
     @Autowired
     CouponInfoService couponInfoService;
 
-
-
     @ApiOperation("查询所有优惠券")
     @GetMapping("/v1/selectAll")
     public ResultModel<CouponInfo> selectAll(@RequestHeader("token") String token,CouponInfo t){
@@ -40,6 +40,7 @@ public class CouponInfoController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
     @GetMapping("/v1/selectPage")
     public PageResult selectPage(@RequestHeader("token") String token,PageRequest pageQuery,CouponInfo t){
+        t.setOpenId(UserHelper.getOpenId(token));
         return couponInfoService.findPage(pageQuery,t);
     }
 
@@ -52,10 +53,11 @@ public class CouponInfoController {
     }
 
     @ApiOperation("增加优惠券(微信)")
-    @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInsertForWxModel",dataTypeClass = CouponInsertForWxModel.class , value ="")})
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<CouponInfo> insertForWx(@RequestHeader("token") String token,@RequestBody CouponInsertForWxModel t) {
-        return couponInfoService.insertWx(t);
+    public ResultModel<CouponInfo> insertForWx(@RequestHeader("token") String token,@RequestBody CouponInfo t) {
+        ;
+        return couponInfoService.insert(t.setOpenId(UserHelper.getOpenId(token)));
     }
 
     @ApiOperation("删除优惠券")
@@ -65,13 +67,13 @@ public class CouponInfoController {
         return couponInfoService.delete(t);
     }
 
-    @ApiOperation("更新优惠券信息")
+    @ApiOperation("更新优惠券信息(微信)")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<CouponInfo> update(@RequestHeader("token") String token,@RequestBody CouponInfo t){
+    public ResultModel<CouponInfo> updateWx(@RequestHeader("token") String token,@RequestBody CouponInfo t){
         CouponInfoExample e = new CouponInfoExample();
         e.createCriteria().andIdEqualTo(t.getId());
-        return couponInfoService.update(t,e);
+        return couponInfoService.update(t,e,UserHelper.getOpenId(token));
     }
 
 }

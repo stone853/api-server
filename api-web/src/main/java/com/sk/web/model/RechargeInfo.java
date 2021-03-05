@@ -1,11 +1,13 @@
 package com.sk.web.model;
 
+import com.sk.web.model.api.BaseModel;
+
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "tcrm_rechargeinfo")
-public class RechargeInfo {
+public class RechargeInfo extends BaseModel {
     private Integer id;
 
     private Integer memId;

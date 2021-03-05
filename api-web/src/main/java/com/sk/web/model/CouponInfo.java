@@ -1,9 +1,11 @@
 package com.sk.web.model;
 
+import com.sk.web.model.api.BaseModel;
+
 import javax.persistence.Table;
 
 @Table(name = "tcrm_coupon_info")
-public class CouponInfo {
+public class CouponInfo extends BaseModel {
     private Integer id;
 
     private String couponCode;
