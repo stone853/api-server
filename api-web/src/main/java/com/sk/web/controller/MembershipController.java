@@ -2,6 +2,8 @@ package com.sk.web.controller;
 
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
+import com.sk.page.PageRequest;
+import com.sk.page.PageResult;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Membership;
 import com.sk.web.model.MembershipExample;
@@ -22,11 +24,18 @@ public class MembershipController {
     @Autowired
     MembershipService membershipService;
 
-    @ApiOperation("查询所有会员")
-    @ApiImplicitParam
-    @GetMapping("/v1/selectAll")
-    public ResultModel<Membership> selectAll(@RequestHeader("token") String token,Membership t){
-        return membershipService.selectAll(t);
+//    @ApiOperation("查询所有会员")
+//    @ApiImplicitParam
+//    @GetMapping("/v1/selectAll")
+//    public ResultModel<Membership> selectAll(@RequestHeader("token") String token,Membership t){
+//        return membershipService.selectAll(t);
+//    }
+
+    @ApiOperation("分页查询所有会员")
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
+    @GetMapping("/v1/selectPage")
+    public PageResult selectPage(@RequestHeader("token") String token, PageRequest pageQuery, Membership t){
+        return membershipService.findPage(pageQuery,t);
     }
 
     @ApiOperation("查询单个会员")

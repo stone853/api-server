@@ -13,4 +13,20 @@
     <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="is_admin" jdbcType="SMALLINT" property="isAdmin" />
   </resultMap>
+
+
+  <select id="selectPage"  resultType="java.util.Map" parameterType="com.sk.web.model.Membership">
+    select
+    t.id,t.name,t.phone,t.sex,t.level,t.balance,t.count
+    from tcrm_membership t where 1=1
+    <if test="id != null and id != ''">
+      and id=#{id}
+    </if>
+    <if test="name != null and name != ''">
+      and name like '%${name}%'
+    </if>
+    <if test="phone != null and phone != ''">
+      and phone=#{phone}
+    </if>
+  </select>
 </mapper>

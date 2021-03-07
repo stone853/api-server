@@ -55,7 +55,7 @@ public class CouponInfoImpl extends BaseImpl<CouponInfo, CouponInfoExample> impl
         ce.createCriteria().andIdEqualTo(cp.getId());
         couponPublishService.update(cp.setCount(cp.getCount() -1 ),ce);
 
-        return new ResultModel().setCode(ResultEnum.SUCCESS.getCode()).setMessage("已领取");
+        return new ResultModel().setCode(ResultEnum.SUCCESS.getCode()).setMessage("领取成功");
     }
 
 

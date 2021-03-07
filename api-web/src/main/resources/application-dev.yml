@@ -1,0 +1,59 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Jin87520024
+    url:  jdbc:mysql://8.136.148.63:3306/crm?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    hikari:
+      pool-name: SomeThingHikariCP
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 20
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 6000
+      connection-test-query: SELECT 1 FROM DUAL
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+
+
+mybatis:
+  mapper-locations : classpath:mapper/*.xml
+  type-aliases-package: com.sk.web.model
+  configuration.use-generated-keys: true
+
+
+pagehelper:
+  offsetAsPageNum: true
+  row-bounds-with-count: true
+  page-size-zero: true
+  reasonable: false
+  params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+  support-methods-arguments: false
+
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    cn.jay.repository: trace
+
+
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+#  ssl:
+#    key-store: classpath:cert/5173245_www.csh111.top.pfx
+#    key-store-password: ciEgQpS8
+#    keyStoreType: PKCS12
+
+crm:
+  upload:
+    image:
+      url: D://images/
+  getToken : 0

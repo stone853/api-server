@@ -2,6 +2,7 @@ package com.sk.web.controller;
 
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
+import com.sk.web.config.CrmConfig;
 import com.sk.web.model.Membership;
 import com.sk.web.service.MembershipService;
 import io.swagger.annotations.Api;
@@ -19,11 +20,14 @@ public class UserApi {
     @Autowired
     MembershipService membershipService;
 
+    @Autowired
+    CrmConfig crmConfig;
+
     @ApiOperation("登陆")
-    @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="")})
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="",required = true)})
     @GetMapping("/v1/login")
     public ResultModel<Membership> login(@RequestParam("code") String code){
-        String openId = membershipService.getOpenId(2,code);
+        String openId = membershipService.getOpenId(crmConfig.getTokenType(),code);
         if (null == openId || "".equals(openId)) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }

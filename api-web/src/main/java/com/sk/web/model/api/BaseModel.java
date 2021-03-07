@@ -11,7 +11,7 @@ import javax.persistence.Transient;
  * @Version 1.0
  */
 public class BaseModel{
-    @ApiModelProperty(value = "wechatCode", required = true)
+    @ApiModelProperty(value = "wechatCode", required = false)
     @Transient
     private String wechatCode;
 

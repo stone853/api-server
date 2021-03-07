@@ -15,11 +15,22 @@ public class CrmConfig {
     @Value("${crm.upload.image.url}")
     private String uploadUrl;
 
+    @Value("${crm.getToken}")
+    private int tokenType;
+
     public void setUploadUrl(String uploadUrl) {
         this.uploadUrl = uploadUrl;
     }
 
     public String getUploadUrl() {
         return uploadUrl;
+    }
+
+    public void setTokenType(int tokenType) {
+        this.tokenType = tokenType;
+    }
+
+    public int getTokenType() {
+        return tokenType;
     }
 }

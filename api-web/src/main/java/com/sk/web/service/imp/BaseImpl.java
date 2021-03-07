@@ -53,7 +53,8 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
     }
 
     public ResultModel<T> delete (T record) {
-        return new ResultModel<T>().setCode(mapper.delete(record)).setMessage(ResultEnum.SUCCESS.getMsg());
+        mapper.delete(record);
+        return new ResultModel<T>().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg());
     }
 
 
@@ -66,12 +67,12 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
      * @param
      * @return
      */
-    private PageInfo<T> getPageInfo(PageRequest pageRequest,T t) {
+    private PageInfo getPageInfo(PageRequest pageRequest,T t) {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        List<T> sysMenus = mapper.selectPage(t);
-        return new PageInfo<T>(sysMenus);
+        List sysMenus = mapper.selectPage(t);
+        return new PageInfo(sysMenus);
     }
 
 }

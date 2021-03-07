@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sk.web.dao.TcrmCouponInfoMapper">
+<mapper namespace="com.sk.web.mapper.CouponInfoMapper">
   <resultMap id="BaseResultMap" type="com.sk.web.model.CouponInfo">
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="coupon_code" jdbcType="VARCHAR" property="couponCode" />
@@ -10,4 +10,24 @@
     <result column="is_enable" jdbcType="VARCHAR" property="isEnable" />
     <result column="status" jdbcType="VARCHAR" property="status" />
   </resultMap>
+
+
+  <select id="selectPage"  resultType="java.util.Map" parameterType="com.sk.web.model.CouponInfo">
+    select
+    t.id,t.coupon_code,t.phone,t1.coupon_value,t1.money_off
+    from tcrm_coupon_info t,tcrm_coupon_publish t1 where 1=1 and t.coupon_code = t1.coupon_code
+    <if test="id != null and id != ''">
+      and id=#{id}
+    </if>
+    <if test="openId != null and openId != ''">
+      and open_id=#{openId}
+    </if>
+    <if test="phone != null and phone != ''">
+      and phone=#{phone}
+    </if>
+    <if test="couponCode != null and couponCode != ''">
+      and coupon_code=#{couponCode}
+    </if>
+    order by createtime desc
+  </select>
 </mapper>
