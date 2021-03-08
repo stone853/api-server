@@ -1,6 +1,7 @@
 package com.sk.web.controller;
 
 import com.auth0.jwt.JWT;
+import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
@@ -56,7 +57,6 @@ public class CouponInfoController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @PostMapping("/v1/insert")
     public ResultModel<CouponInfo> insertForWx(@RequestHeader("token") String token,@RequestBody CouponInfo t) {
-        ;
         return couponInfoService.insert(t.setOpenId(UserHelper.getOpenId(token)));
     }
 
@@ -67,10 +67,16 @@ public class CouponInfoController {
         return couponInfoService.delete(t);
     }
 
-    @ApiOperation("更新优惠券信息(微信)")
+    @ApiOperation("消券(微信)")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @PostMapping("/v1/update")
     public ResultModel<CouponInfo> updateWx(@RequestHeader("token") String token,@RequestBody CouponInfo t){
+        if (null == t.getId() || "".equals(t.getId())) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("请选中您要消除的优惠券（id不能为空）");
+        }
+        if (null == t.getStatus() || !"0".equals(t.getStatus())) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("消券状态有误（status应为0）");
+        }
         CouponInfoExample e = new CouponInfoExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return couponInfoService.update(t,e,UserHelper.getOpenId(token));

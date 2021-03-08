@@ -38,14 +38,21 @@ public class CouponInfoImpl extends BaseImpl<CouponInfo, CouponInfoExample> impl
     @Transactional
     @Override
     public synchronized ResultModel<CouponInfo> insert(CouponInfo t) {
+        //首先查询发布表中是否存在该优惠券信息
         CouponPublish cp = new CouponPublish();
         ResultModel<CouponPublish> r = couponPublishService.selectOne(cp.setCouponCode(t.getCouponCode()));
         if (r.getCode() < 0 || r.getList() == null || r.getList().size() < 1) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未找到优惠券");
         }
+        //查询优惠券剩余数量
         cp = r.getList().get(0);
         if (cp.getCount() < 1) {
             return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("已无优惠券，领取失败");
+        }
+        //查询该用户是否已经领取过
+        CouponInfo old = mapper.selectOne(new CouponInfo().setCouponCode(t.getCouponCode()).setOpenId(t.getOpenId()));
+        if (old !=null && old.getStatus().equals("1")) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("您已领取过，请不要重复领取");
         }
 
         //优惠券入用户库
@@ -62,6 +69,11 @@ public class CouponInfoImpl extends BaseImpl<CouponInfo, CouponInfoExample> impl
     @Transactional
     @Override
     public ResultModel<CouponInfo> update(CouponInfo t, CouponInfoExample e,String openId) {
+        //判断优惠券是否已经消除过
+        CouponInfo old = mapper.selectOne(new CouponInfo().setId(t.getId()));
+        if (old != null && old.getStatus().equals("0")) {
+            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("该优惠券已消除");
+        }
         //修改
         mapper.updateByExampleSelective(t,e);
         //留痕

@@ -2,37 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0e4f23b-6f8f-495d-862a-06c0162ec30e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/config/CrmConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/config/CrmConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/controller/MembershipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/controller/MembershipController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/controller/UserApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/controller/UserApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/model/api/BaseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/model/api/BaseModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/service/imp/BaseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/service/imp/BaseImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/service/imp/CouponInfoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/classes/java/main/com/sk/web/service/imp/CouponInfoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/libs/api-web-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/libs/api-web-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/libs/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/libs/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/resources/main/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/resources/main/mapper/CouponInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/resources/main/mapper/CouponInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/resources/main/mapper/CouponLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/resources/main/mapper/CouponLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/resources/main/mapper/MembershipMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/resources/main/mapper/MembershipMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/build/tmp/bootJar/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/config/CrmConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/config/CrmConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/MembershipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/MembershipController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/UserApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/api/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/api/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/BaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/BaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-base/src/main/java/com/sk/utils/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-base/src/main/java/com/sk/utils/HttpUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-web/build/libs/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponInfoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponInfoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/MembershipImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/MembershipImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/resources/mapper/CouponInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/resources/mapper/CouponInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/resources/mapper/CouponLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/resources/mapper/CouponLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-web/src/main/resources/mapper/MembershipMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-web/src/main/resources/mapper/MembershipMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -132,69 +111,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.1.4.RELEASE/1c97085f1052ad3206bafd364eba572d9f7565c2/spring-web-5.1.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3135">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
+            <state relative-caret-position="335">
+              <caret line="81" column="61" lean-forward="true" selection-start-line="81" selection-start-column="61" selection-end-line="81" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/mapper/MembershipMapper.xml">
+        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/utils/UserHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="361">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/Consume.java">
+        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/MembershipService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/javax.persistence/javax.persistence-api/2.2/462dff65f6f8bde02ee9d8afe07fe9d50268199c/javax.persistence-api-2.2-sources.jar!/javax/persistence/Table.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="55" column="43" lean-forward="true" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="133">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application-prod.yml">
+        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/MembershipImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+            <state relative-caret-position="189">
+              <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/generatorConfig.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/api-base/src/main/java/com/sk/utils/HttpUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-web/build/libs/application.yml">
+        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponInfoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="152">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponInfoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="74" column="58" lean-forward="true" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api-base/src/main/java/com/sk/model/ResultEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -202,23 +203,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application-dev.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/config/CrmConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="26" />
-              <folding>
-                <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
-              </folding>
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -235,7 +221,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>springBootVersion</find>
       <find>Integer</find>
       <find>passowrd</find>
       <find>datatype</find>
@@ -265,6 +250,7 @@
       <find>getOpenId</find>
       <find>getCouponCode</find>
       <find>couponCode</find>
+      <find>System.out.print</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -306,7 +292,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponPublishService.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponPublishfoImpl.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponPublishImpl.java" />
         <option value="$PROJECT_DIR$/api-base/src/main/java/com/sk/utils/AESUtil.java" />
@@ -328,7 +313,6 @@
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/Consume.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/ConsumeDetail.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/ConsumeHis.java" />
-        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponInfo.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponLog.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponPublish.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/Membership.java" />
@@ -340,13 +324,9 @@
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/RefundInfo.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/Repository.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/MembershipService.java" />
-        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/MembershipImpl.java" />
-        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponInfoService.java" />
-        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponInfoController.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/utils/UserHelper.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/resources/mapper/CouponLogMapper.xml" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/api/BaseModel.java" />
-        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponInfoImpl.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/resources/mapper/CouponInfoMapper.xml" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/MembershipController.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/BaseImpl.java" />
@@ -354,9 +334,15 @@
         <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/UserApi.java" />
         <option value="$PROJECT_DIR$/api-web/src/main/resources/mapper/MembershipMapper.xml" />
         <option value="$PROJECT_DIR$/api-web/build/libs/application.yml" />
-        <option value="$PROJECT_DIR$/api-web/src/main/resources/application-dev.yml" />
-        <option value="$PROJECT_DIR$/api-web/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/api-web/src/main/resources/application-prod.yml" />
+        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponInfoService.java" />
+        <option value="$PROJECT_DIR$/api-web/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponInfo.java" />
+        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponInfoImpl.java" />
+        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponInfoController.java" />
+        <option value="$PROJECT_DIR$/api-web/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/api-base/src/main/java/com/sk/utils/HttpUtil.java" />
+        <option value="$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/MembershipImpl.java" />
       </list>
     </option>
   </component>
@@ -396,19 +382,6 @@
               <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -417,6 +390,78 @@
               <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sk" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sk" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sk" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sk" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="imp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="api-web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sk" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
@@ -481,7 +526,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.api-server:api-web [bootJar]">
+  <component name="RunManager" selected="Spring Boot.ServerSpringbootApplication">
     <configuration name="AESUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sk.utils.AESUtil" />
       <module name="api-base_main" />
@@ -681,12 +726,13 @@
       <workItem from="1614910128165" duration="5807000" />
       <workItem from="1615009332205" duration="4102000" />
       <workItem from="1615019949680" duration="7231000" />
-      <workItem from="1615110882802" duration="1686000" />
+      <workItem from="1615110882802" duration="1910000" />
+      <workItem from="1615168611252" duration="4764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="834378000" />
+    <option name="totallyTimeSpent" value="839366000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,7 +747,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29289544" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2969169" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -711,8 +757,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36260623" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36260623" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -844,43 +890,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponPublishController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="71" column="30" lean-forward="true" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-76">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="92" selection-start-line="8" selection-start-column="92" selection-end-line="8" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/utils/UserHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/mapper/CouponLogMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -895,33 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-base/src/main/java/com/sk/model/ResultEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponInfoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="54" column="53" lean-forward="true" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1024,13 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/ProductInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/mapper/ProductinfoMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -1042,23 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="31" column="11" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="66" column="37" lean-forward="true" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/BaseImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -1079,13 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1093,34 +1044,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/MembershipService.java">
+    <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/tk.mybatis/mapper-spring-boot-autoconfigure/2.1.5/7e6cf97419aab647468e7c0760a5b720c7a7682a/mapper-spring-boot-autoconfigure-2.1.5.jar!/META-INF/spring-configuration-metadata.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
+        <state relative-caret-position="-7322" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/MembershipImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/org.mybatis.spring.boot/mybatis-spring-boot-autoconfigure/1.3.2/dfbf485f3e43573c1b65c2e8398387f32d33ca3c/mybatis-spring-boot-autoconfigure-1.3.2-sources.jar!/META-INF/additional-spring-configuration-metadata.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/build/libs/application.yml" />
     <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.1.4.RELEASE/1c97085f1052ad3206bafd364eba572d9f7565c2/spring-web-5.1.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3135">
           <caret line="197" selection-start-line="197" selection-end-line="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/mapper/MembershipMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1130,6 +1066,16 @@
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/javax.persistence/javax.persistence-api/2.2/462dff65f6f8bde02ee9d8afe07fe9d50268199c/javax.persistence-api-2.2-sources.jar!/javax/persistence/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/config/CrmConfig.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1144,49 +1090,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/tk.mybatis/mapper-spring-boot-autoconfigure/2.1.5/7e6cf97419aab647468e7c0760a5b720c7a7682a/mapper-spring-boot-autoconfigure-2.1.5.jar!/META-INF/spring-configuration-metadata.json">
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application-prod.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7322" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/org.mybatis.spring.boot/mybatis-spring-boot-autoconfigure/1.3.2/dfbf485f3e43573c1b65c2e8398387f32d33ca3c/mybatis-spring-boot-autoconfigure-1.3.2-sources.jar!/META-INF/additional-spring-configuration-metadata.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/javax.persistence/javax.persistence-api/2.2/462dff65f6f8bde02ee9d8afe07fe9d50268199c/javax.persistence-api-2.2-sources.jar!/javax/persistence/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="55" column="43" lean-forward="true" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+        <state relative-caret-position="278">
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/build/libs/application.yml">
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/mapper/MembershipMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="266">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application.yml">
+    <entry file="jar://$PROJECT_DIR$/../../.gradle/caches/modules-2/files-2.1/tk.mybatis/mapper-base/1.1.5/6e2d2df3cdad0a3fbeb074cc8e188919814e9208/mapper-base-1.1.5-sources.jar!/tk/mybatis/mapper/common/base/select/SelectOneMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="344">
+          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/model/CouponInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/CouponInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application-prod.yml">
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+        <state relative-caret-position="57">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/BaseImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-155">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-base/src/main/java/com/sk/model/ResultEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/CouponInfoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="74" column="58" lean-forward="true" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/CouponInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="81" column="61" lean-forward="true" selection-start-line="81" selection-start-column="61" selection-end-line="81" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/utils/UserHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/MembershipService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/controller/ProductInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="22" column="70" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-base/src/main/java/com/sk/utils/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-web/src/main/java/com/sk/web/service/imp/MembershipImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

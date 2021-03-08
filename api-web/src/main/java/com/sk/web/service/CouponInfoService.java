@@ -6,5 +6,5 @@ import com.sk.web.model.CouponInfo;
 import com.sk.web.model.CouponInfoExample;
 
 public interface CouponInfoService extends BaseService<CouponInfo, CouponInfoExample>{
-    public ResultModel<CouponInfo> update(CouponInfo t, CouponInfoExample e, String openId);
+    ResultModel<CouponInfo> update(CouponInfo t, CouponInfoExample e, String openId);
 }

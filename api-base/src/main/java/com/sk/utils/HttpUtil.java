@@ -1,5 +1,8 @@
 package com.sk.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,6 +18,7 @@ import java.util.Map;
  * @Version 1.0
  */
 public class HttpUtil {
+    Logger log = LoggerFactory.getLogger(HttpUtil.class);
     /**
      * 向指定URL发送GET方法的请求
      *
@@ -24,7 +28,7 @@ public class HttpUtil {
      *            请求参数，请求参数应该是 name1=value1&name2=value2 的形式。
      * @return URL 所代表远程资源的响应结果
      */
-    public static String sendGet(String url, String param) {
+    public String sendGet(String url, String param) {
         String result = "";
         BufferedReader in = null;
         try {
@@ -43,7 +47,7 @@ public class HttpUtil {
             Map<String, List<String>> map = connection.getHeaderFields();
             // 遍历所有的响应头字段
             for (String key : map.keySet()) {
-                System.out.println(key + "--->" + map.get(key));
+                log.info(key + "--->" + map.get(key));
             }
             // 定义 BufferedReader输入流来读取URL的响应
             in = new BufferedReader(new InputStreamReader(
@@ -53,7 +57,7 @@ public class HttpUtil {
                 result += line;
             }
         } catch (Exception e) {
-            System.out.println("发送GET请求出现异常！" + e);
+            log.error("发送GET请求出现异常！" + e);
             e.printStackTrace();
         }
         // 使用finally块来关闭输入流
@@ -78,7 +82,7 @@ public class HttpUtil {
      *            请求参数，请求参数应该是 name1=value1&name2=value2 的形式。
      * @return 所代表远程资源的响应结果
      */
-    public static String sendPost(String url, String param) {
+    public String sendPost(String url, String param) {
         PrintWriter out = null;
         BufferedReader in = null;
         String result = "";
@@ -108,7 +112,7 @@ public class HttpUtil {
                 result += line;
             }
         } catch (Exception e) {
-            System.out.println("发送 POST 请求出现异常！"+e);
+            log.error("发送 POST 请求出现异常！"+e);
             e.printStackTrace();
         }
         //使用finally块来关闭输出流、输入流
@@ -130,7 +134,7 @@ public class HttpUtil {
 
     public static void main (String args[]) {
         //发送 GET 请求
-        String s=HttpUtil.sendGet("https://api.weixin.qq.com/sns/jscode2session", "appid=wx398d94f63a862743&secret=69173f5518a3099be7c9995953f301f3&js_code=051Qp6Ga1ojvyA0PNdJa1Mkgcs2Qp6GI&grant_type=authorization_code");
+        String s=new HttpUtil().sendGet("https://api.weixin.qq.com/sns/jscode2session", "appid=wx398d94f63a862743&secret=69173f5518a3099be7c9995953f301f3&js_code=051Qp6Ga1ojvyA0PNdJa1Mkgcs2Qp6GI&grant_type=authorization_code");
         System.out.println(s);
 
 //        //发送 POST 请求

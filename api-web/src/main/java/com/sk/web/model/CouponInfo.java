@@ -24,16 +24,18 @@ public class CouponInfo extends BaseModel {
         return id;
     }
 
-    public void setId(Integer id) {
+    public CouponInfo setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public String getCouponCode() {
         return couponCode;
     }
 
-    public void setCouponCode(String couponCode) {
+    public CouponInfo setCouponCode(String couponCode) {
         this.couponCode = couponCode == null ? null : couponCode.trim();
+        return this;
     }
 
     public String getPhone() {

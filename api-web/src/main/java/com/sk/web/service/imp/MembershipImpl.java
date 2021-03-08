@@ -37,7 +37,7 @@ public class MembershipImpl extends BaseImpl<Membership, MembershipExample> impl
             if (null == code || "".equals(code)) {
                 return null;
             }
-            String result = HttpUtil.sendGet("https://api.weixin.qq.com/sns/jscode2session", "appid=wx398d94f63a862743&secret=69173f5518a3099be7c9995953f301f3&js_code="+code+"&grant_type=authorization_code");
+            String result = new HttpUtil().sendGet("https://api.weixin.qq.com/sns/jscode2session", "appid=wx398d94f63a862743&secret=69173f5518a3099be7c9995953f301f3&js_code="+code+"&grant_type=authorization_code");
             JSONObject json = JSONObject.parseObject(result);
             if (!json.containsKey("openid")) {
                 return null;
