@@ -27,7 +27,6 @@ public class MembershipImpl extends BaseImpl<Membership, MembershipExample> impl
                 .sign(Algorithm.HMAC256(t.getPassword()));
     }
 
-
     public String getOpenId(int type,String code) {
         if (type == 0) {
             return "ole3v4pAwwi7OAMOC0_LZ44PPqzY";
@@ -44,7 +43,5 @@ public class MembershipImpl extends BaseImpl<Membership, MembershipExample> impl
             }
             return json.getString("openid");
         }
-
-
     }
 }
