@@ -2,8 +2,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: Jin87520024
+    username: ENC(kT2BrE32MuY2ZlCWGWAX4g==)
+    password: ENC(5peX8ZYZ1pM8q41fAYJ+zvj90JgoS5gy)
     url:  jdbc:mysql://8.136.148.63:3306/crm?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
     hikari:
       pool-name: SomeThingHikariCP
@@ -57,3 +57,8 @@ crm:
     image:
       url: /opt/rh/images/
   getToken : 2
+
+
+jasypt:
+  encryptor:
+    password: G0CvDz7oJn6

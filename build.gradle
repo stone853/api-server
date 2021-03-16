@@ -67,6 +67,8 @@ subprojects {
         implementation "com.google.code.findbugs:annotations:2.0.0"
 
         compile("net.coobird:thumbnailator:0.4.13")
+
+        compile("com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.2")
     }
     configurations {
         //移除spring boot 默认logger依赖

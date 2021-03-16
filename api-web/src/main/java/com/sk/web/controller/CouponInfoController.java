@@ -1,6 +1,5 @@
 package com.sk.web.controller;
 
-import com.auth0.jwt.JWT;
 import com.sk.model.ResultEnum;
 import com.sk.model.ResultModel;
 import com.sk.page.PageRequest;
@@ -8,9 +7,7 @@ import com.sk.page.PageResult;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.CouponInfo;
 import com.sk.web.model.CouponInfoExample;
-import com.sk.web.model.api.BaseModel;
 import com.sk.web.service.CouponInfoService;
-import com.sk.web.service.MembershipService;
 import com.sk.web.utils.UserHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -44,7 +41,6 @@ public class CouponInfoController {
         t.setOpenId(UserHelper.getOpenId(token));
         return couponInfoService.findPage(pageQuery,t);
     }
-
 
     @ApiOperation("查询单个优惠券")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
