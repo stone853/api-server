@@ -22,6 +22,8 @@ public class Productinfo extends BaseModel {
 
     private String imgUrl;
 
+    private String des;
+
     private String detail;
 
     private BigDecimal price;
@@ -38,6 +40,13 @@ public class Productinfo extends BaseModel {
 
     private Integer orderNumber;
 
+    public void setDes(String des) {
+        this.des = des;
+    }
+
+    public String getDes() {
+        return des;
+    }
 
     public void setCreatetime(String createtime) {
         this.createtime = createtime;

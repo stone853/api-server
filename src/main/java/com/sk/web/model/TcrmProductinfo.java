@@ -11,6 +11,8 @@ public class TcrmProductinfo {
 
     private String imgUrl;
 
+    private String des;
+
     private String detail;
 
     private BigDecimal price;
@@ -57,6 +59,14 @@ public class TcrmProductinfo {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl == null ? null : imgUrl.trim();
+    }
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des == null ? null : des.trim();
     }
 
     public String getDetail() {

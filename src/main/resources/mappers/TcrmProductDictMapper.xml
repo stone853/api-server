@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sk.web.dao.TcrmProductDictMapper">
+  <resultMap id="BaseResultMap" type="com.sk.web.model.TcrmProductDict">
+    <result column="id" jdbcType="SMALLINT" property="id" />
+    <result column="dictname" jdbcType="VARCHAR" property="dictname" />
+    <result column="dictcode" jdbcType="VARCHAR" property="dictcode" />
+    <result column="parentcode" jdbcType="VARCHAR" property="parentcode" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, dictname, dictcode, parentcode
+  </sql>
+  <select id="selectByExample" parameterType="com.sk.web.model.TcrmProductDictExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tcrm_product_dict
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.sk.web.model.TcrmProductDictExample">
+    delete from tcrm_product_dict
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sk.web.model.TcrmProductDict">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Short">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tcrm_product_dict (id, dictname, dictcode, 
+      parentcode)
+    values (#{id,jdbcType=SMALLINT}, #{dictname,jdbcType=VARCHAR}, #{dictcode,jdbcType=VARCHAR}, 
+      #{parentcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sk.web.model.TcrmProductDict">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Short">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tcrm_product_dict
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      id,
+      <if test="dictname != null">
+        dictname,
+      </if>
+      <if test="dictcode != null">
+        dictcode,
+      </if>
+      <if test="parentcode != null">
+        parentcode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=SMALLINT},
+      <if test="dictname != null">
+        #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="dictcode != null">
+        #{dictcode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentcode != null">
+        #{parentcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sk.web.model.TcrmProductDictExample" resultType="java.lang.Long">
+    select count(*) from tcrm_product_dict
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tcrm_product_dict
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=SMALLINT},
+      </if>
+      <if test="record.dictname != null">
+        dictname = #{record.dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dictcode != null">
+        dictcode = #{record.dictcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentcode != null">
+        parentcode = #{record.parentcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tcrm_product_dict
+    set id = #{record.id,jdbcType=SMALLINT},
+      dictname = #{record.dictname,jdbcType=VARCHAR},
+      dictcode = #{record.dictcode,jdbcType=VARCHAR},
+      parentcode = #{record.parentcode,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

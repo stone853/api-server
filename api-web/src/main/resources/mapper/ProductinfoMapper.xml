@@ -6,6 +6,7 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="des" jdbcType="VARCHAR" property="des" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
     <result column="price" jdbcType="DECIMAL" property="price" />
     <result column="price_discount" jdbcType="DECIMAL" property="priceDiscount" />

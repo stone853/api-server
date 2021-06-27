@@ -62,3 +62,6 @@ crm:
 jasypt:
   encryptor:
     password: G0CvDz7oJn6
+
+location:
+  tempDir: /opt/rh/images/tmp
