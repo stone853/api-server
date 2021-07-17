@@ -9,6 +9,8 @@
     <result column="des" jdbcType="VARCHAR" property="des" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
     <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="size" jdbcType="INTEGER" property="size" />
     <result column="price_discount" jdbcType="DECIMAL" property="priceDiscount" />
     <result column="tag" jdbcType="VARCHAR" property="tag" />
     <result column="subhead" jdbcType="VARCHAR" property="subhead" />
@@ -50,4 +52,13 @@
     </if>
      order by createtime desc
   </select>
+
+  <select id="publish"  resultMap="BaseResultMap" parameterType="java.util.List">
+    select * from tcrm_productinfo where id in
+    <foreach collection="array" open="(" separator="," close=")" item="haha">
+      #{haha}
+    </foreach>
+  </select>
+
+
 </mapper>

@@ -1,7 +1,8 @@
 package com.sk.web.controller;
 
 import com.sk.model.ResultEnum;
-import com.sk.model.ResultModel;
+import com.sk.model.ResultJsonModel;
+import com.sk.model.ResultModelImp;
 import com.sk.web.config.CrmConfig;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.ProductImage;
@@ -44,7 +45,7 @@ public class ProductImageController {
     @ApiOperation("查询所有产品图片")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public ResultModel<ProductImage> selectAll(@RequestHeader("token") String token,ProductImage t){
+    public ResultModelImp<ProductImage> selectAll(ProductImage t){
         return productImageService.selectAll(t);
     }
 
@@ -59,21 +60,21 @@ public class ProductImageController {
     @ApiOperation("查询单个产品图片")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ProductImage",dataTypeClass = ProductImage.class , value ="")})
     @PostMapping("/v1/selectOne")
-    public ResultModel<ProductImage> selectOne(@RequestBody ProductImage t){
+    public ResultModelImp<ProductImage> selectOne(@RequestBody ProductImage t){
         return productImageService.selectOne(t);
     }
 
     @ApiOperation("增加产品图片")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ProductImage",dataTypeClass = ProductImage.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<ProductImage> insert(@RequestBody ProductImage t) {
+    public ResultModelImp<ProductImage> insert(@RequestBody ProductImage t) {
         return productImageService.insert(t);
     }
 
 
     @ApiOperation("上传图片")
     @PostMapping("/v1/upload")
-    public ResultModel uploadImg(@RequestHeader("token") String token,@RequestParam("file") MultipartFile file) {
+    public ResultModelImp uploadImg(@RequestHeader("token") String token, @RequestParam("file") MultipartFile file) {
         String fileName = file.getOriginalFilename();
         String url = crmConfig.getUploadUrl();
         try {
@@ -84,10 +85,10 @@ public class ProductImageController {
             int imgHeight = bim.getHeight();
             FileUtil.uploadFile(FileUtil.compressImage(url+ fileName,imgWidth,imgHeight),url, fileName);
 
-            return new ResultModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setMessage("/product_image/v1/getImage?path="+url+fileName);
+            return new ResultJsonModel<ProductImage>().setCode(ResultEnum.SUCCESS.getCode()).setMessage("/product_image/v1/getImage?path="+url+fileName);
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResultModel<ProductImage>().setCode(ResultEnum.ERROR.getCode()).setMessage(ResultEnum.ERROR.getMsg());
+            return new ResultJsonModel<ProductImage>().setCode(ResultEnum.ERROR.getCode()).setMessage(ResultEnum.ERROR.getMsg());
         }
     }
 
@@ -117,14 +118,14 @@ public class ProductImageController {
         @ApiOperation("删除产品图片")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ProductImage",dataTypeClass = ProductImage.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<ProductImage> delete(@RequestHeader("token") String token,@RequestBody ProductImage t){
+    public ResultModelImp<ProductImage> delete(@RequestHeader("token") String token, @RequestBody ProductImage t){
         return productImageService.delete(t);
     }
 
     @ApiOperation("更新产品图片")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "ProductImage",dataTypeClass = ProductImage.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<ProductImage> update(@RequestHeader("token") String token,@RequestBody ProductImage t){
+    public ResultModelImp<ProductImage> update(@RequestHeader("token") String token, @RequestBody ProductImage t){
         ProductImageExample e = new ProductImageExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return productImageService.update(t,e);

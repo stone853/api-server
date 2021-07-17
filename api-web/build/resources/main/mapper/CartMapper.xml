@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sk.web.mapper.CartMapper">
+  <resultMap id="BaseResultMap" type="com.sk.web.model.Cart">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="size" jdbcType="DOUBLE" property="size" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+  </resultMap>
+
+
+  <resultMap id="BaseResultMap1" type="java.util.Map">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="size" jdbcType="DOUBLE" property="size" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+    <result column="store" jdbcType="VARCHAR" property="store" />
+  </resultMap>
+
+  <select id="selectPage"  resultMap="BaseResultMap1" parameterType="com.sk.web.model.Cart">
+    select t1.*,t2.store from tcrm_cart t1 left join tcrm_productinfo t2 on t1.pid = t2.id where 1=1
+    <if test="id != null and id != ''">
+      and t1.id=#{id}
+    </if>
+    <if test="name != null and name != ''">
+      and t1.name like '%${name}%'
+    </if>
+    <if test="openid != null and openid != ''">
+      and t1.openid=#{openid}
+    </if>
+
+    order by t1.create_time desc
+  </select>
+
+</mapper>

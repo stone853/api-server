@@ -1,12 +1,11 @@
 package com.sk.web.controller;
 
-import com.sk.model.ResultModel;
+import com.sk.model.ResultModelImp;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.web.constant.RequestCommonPathConstant;
 
 import com.sk.web.model.ProductDict;
-import com.sk.web.model.Productinfo;
 import com.sk.web.service.ProductDictService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -32,7 +31,7 @@ public class ProductDictController {
 
     @ApiOperation("查询列表")
     @GetMapping("/v1/selectAll")
-    public ResultModel<ProductDict> selectAll(ProductDict t){
+    public ResultModelImp<ProductDict> selectAll(ProductDict t){
         return productDictService.selectAll(t);
     }
 

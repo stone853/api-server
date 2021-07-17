@@ -1,6 +1,6 @@
 package com.sk.model;
 
-import com.alibaba.fastjson.JSONObject;
+
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @Date 2020/11/26 10:54
  * @Version 1.0
  */
-public class ResultModel<T> {
+public class ResultListModel<T> extends ResultModelImp {
     private int code;
     private String message;
     private List<T> list;
@@ -18,7 +18,7 @@ public class ResultModel<T> {
         return code;
     }
 
-    public ResultModel<T> setCode(int code) {
+    public ResultListModel<T> setCode(int code) {
         this.code = code;
         return this;
     }
@@ -27,12 +27,12 @@ public class ResultModel<T> {
         return message;
     }
 
-    public ResultModel<T> setMessage(String message) {
+    public ResultListModel<T> setMessage(String message) {
         this.message = message;
         return this;
     }
 
-    public ResultModel<T> setList(List<T> list) {
+    public ResultListModel<T> setList(List<T> list) {
         if (null != list || list.size() >0) {
             this.list = list;
         }

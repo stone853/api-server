@@ -1,6 +1,6 @@
 package com.sk.web.controller;
 
-import com.sk.model.ResultModel;
+import com.sk.model.ResultModelImp;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.web.constant.RequestCommonPathConstant;
@@ -28,7 +28,7 @@ public class SaleRecordController {
 
     @ApiOperation("查询销售记录")
     @GetMapping("/v1/selectAll")
-    public ResultModel<SaleRecord> selectAll(@RequestHeader("token") String token,SaleRecord t){
+    public ResultModelImp<SaleRecord> selectAll(@RequestHeader("token") String token, SaleRecord t){
         return SaleRecordService.selectAll(t);
     }
 
@@ -43,28 +43,28 @@ public class SaleRecordController {
     @ApiOperation("查询单个产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "SaleRecord",dataTypeClass = SaleRecord.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<SaleRecord> selectOne(@RequestHeader("token") String token,SaleRecord t){
+    public ResultModelImp<SaleRecord> selectOne(@RequestHeader("token") String token, SaleRecord t){
         return SaleRecordService.selectOne(t);
     }
 
     @ApiOperation("增加产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "SaleRecord",dataTypeClass = SaleRecord.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<SaleRecord> insert(@RequestHeader("token") String token,@RequestBody SaleRecord t) {
+    public ResultModelImp<SaleRecord> insert(@RequestHeader("token") String token, @RequestBody SaleRecord t) {
         return SaleRecordService.insert(t);
     }
 
     @ApiOperation("删除产品")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "SaleRecord",dataTypeClass = SaleRecord.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<SaleRecord> delete(@RequestHeader("token") String token,@RequestBody SaleRecord t){
+    public ResultModelImp<SaleRecord> delete(@RequestHeader("token") String token, @RequestBody SaleRecord t){
         return SaleRecordService.delete(t);
     }
 
     @ApiOperation("更新产品信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "SaleRecord",dataTypeClass = SaleRecord.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<SaleRecord> update(@RequestHeader("token") String token,@RequestBody SaleRecord t){
+    public ResultModelImp<SaleRecord> update(@RequestHeader("token") String token, @RequestBody SaleRecord t){
         SaleRecordExample e = new SaleRecordExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return SaleRecordService.update(t,e);

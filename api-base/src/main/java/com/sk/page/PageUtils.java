@@ -2,7 +2,6 @@ package com.sk.page;
 
 import com.github.pagehelper.PageInfo;
 import com.sk.model.ResultEnum;
-import com.sk.model.ResultModel;
 
 
 /**

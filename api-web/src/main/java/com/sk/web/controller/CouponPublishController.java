@@ -1,13 +1,13 @@
 package com.sk.web.controller;
 
-import com.sk.model.ResultModel;
+import com.sk.model.ResultListModel;
+import com.sk.model.ResultModelImp;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.CouponPublish;
 import com.sk.web.model.CouponPublishExample;
 import com.sk.web.service.CouponPublishService;
-import com.sk.web.utils.UserHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -32,7 +32,7 @@ public class CouponPublishController {
 
     @ApiOperation("查询所有优惠券")
     @GetMapping("/v1/selectAll")
-    public ResultModel<CouponPublish> selectAll(@RequestHeader("token") String token,CouponPublish t){
+    public ResultModelImp<CouponPublish> selectAll(@RequestHeader("token") String token, CouponPublish t){
         return couponPublishService.selectAll(t);
     }
 
@@ -47,14 +47,14 @@ public class CouponPublishController {
     @ApiOperation("查询单个优惠券")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponPublish",dataTypeClass = CouponPublish.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<CouponPublish> selectOne(@RequestHeader("token") String token,CouponPublish t){
+    public ResultModelImp<CouponPublish> selectOne(@RequestHeader("token") String token, CouponPublish t){
         return couponPublishService.selectOne(t);
     }
 
     @ApiOperation("增加优惠券")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponPublish",dataTypeClass = CouponPublish.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<CouponPublish> insert(@RequestHeader("token") String token,@RequestBody CouponPublish t) {
+    public ResultModelImp<CouponPublish> insert(@RequestHeader("token") String token, @RequestBody CouponPublish t) {
         t.setPublishTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()))
             .setCouponCode(UUID.randomUUID().toString());
         return couponPublishService.insert(t);
@@ -63,14 +63,14 @@ public class CouponPublishController {
     @ApiOperation("删除优惠券")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponPublish",dataTypeClass = CouponPublish.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<CouponPublish> delete(@RequestHeader("token") String token,@RequestBody CouponPublish t){
+    public ResultModelImp<CouponPublish> delete(@RequestHeader("token") String token, @RequestBody CouponPublish t){
         return couponPublishService.delete(t);
     }
 
     @ApiOperation("更新优惠券信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponPublish",dataTypeClass = CouponPublish.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<CouponPublish> update(@RequestHeader("token") String token,@RequestBody CouponPublish t){
+    public ResultModelImp<CouponPublish> update(@RequestHeader("token") String token, @RequestBody CouponPublish t){
         CouponPublishExample e = new CouponPublishExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return couponPublishService.update(t,e);

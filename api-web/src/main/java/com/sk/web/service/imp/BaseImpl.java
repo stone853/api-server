@@ -4,7 +4,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.sk.model.ResultEnum;
-import com.sk.model.ResultModel;
+import com.sk.model.ResultJsonModel;
+import com.sk.model.ResultListModel;
+import com.sk.model.ResultModelImp;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.page.PageUtils;
@@ -28,33 +30,29 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
         return mapper;
     }
 
-    public ResultModel<T> selectAll(T record) {
-        return new ResultModel<T>().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg()).setList(mapper.select(record));
+    public ResultListModel selectAll(T record) {
+        return new ResultListModel<T>().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg()).setList(mapper.select(record));
     }
 
-    public ResultModel<T> selectAll() {
-        JSONObject json = new JSONObject();
-        json.put("list",mapper.selectAll());
-        return new ResultModel().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg()).setList(mapper.selectAll());
+    public ResultListModel selectAll() {
+        return new ResultListModel().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg()).setList(mapper.selectAll());
     }
 
-    public ResultModel<T> selectOne(T record) {
-        List<T> list = new ArrayList();
-        list.add(mapper.selectOne(record));
-        return new ResultModel().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg()).setList(list);
+    public ResultJsonModel selectOne(T record) {
+        return new ResultJsonModel().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg()).setData(mapper.selectOne(record));
     }
 
-    public ResultModel<T> insert(T record) {
-        return new ResultModel<T>().setCode(mapper.insert(record)).setMessage(ResultEnum.SUCCESS.getMsg());
+    public ResultJsonModel<T> insert(T record) {
+        return new ResultJsonModel<T>().setCode(mapper.insert(record)).setMessage(ResultEnum.SUCCESS.getMsg());
     }
 
-    public ResultModel<T> update (T record,T1 object) {
-        return new ResultModel<T>().setCode(mapper.updateByExampleSelective(record,object)).setMessage(ResultEnum.SUCCESS.getMsg());
+    public ResultJsonModel<T> update (T record, T1 object) {
+        return new ResultJsonModel<T>().setCode(mapper.updateByExampleSelective(record,object)).setMessage(ResultEnum.SUCCESS.getMsg());
     }
 
-    public ResultModel<T> delete (T record) {
+    public ResultJsonModel<T> delete (T record) {
         mapper.delete(record);
-        return new ResultModel<T>().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg());
+        return new ResultJsonModel<T>().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg());
     }
 
 
@@ -67,7 +65,7 @@ public abstract class BaseImpl<T,T1> implements BaseService<T,T1> {
      * @param
      * @return
      */
-    private PageInfo getPageInfo(PageRequest pageRequest,T t) {
+    protected PageInfo getPageInfo(PageRequest pageRequest,T t) {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);

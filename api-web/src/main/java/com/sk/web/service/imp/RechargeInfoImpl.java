@@ -1,6 +1,7 @@
 package com.sk.web.service.imp;
 
-import com.sk.model.ResultModel;
+import com.sk.model.ResultJsonModel;
+import com.sk.model.ResultListModel;
 import com.sk.web.mapper.MembershipMapper;
 import com.sk.web.mapper.RechargeInfoMapper;
 import com.sk.web.model.Membership;
@@ -12,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.math.BigDecimal;
 
 @Service
 public class RechargeInfoImpl extends BaseImpl<RechargeInfo, RechargeInfoExample> implements RechargeInfoService{
@@ -27,7 +27,7 @@ public class RechargeInfoImpl extends BaseImpl<RechargeInfo, RechargeInfoExample
 
     @Transactional
     @Override
-    public ResultModel<RechargeInfo> insert(RechargeInfo record) {
+    public ResultJsonModel<RechargeInfo> insert(RechargeInfo record) {
         //修改会员余额和次数
         MembershipExample e = new MembershipExample();
         e.createCriteria().andIdEqualTo(record.getMemId());

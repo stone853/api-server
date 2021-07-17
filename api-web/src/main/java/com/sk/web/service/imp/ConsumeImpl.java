@@ -1,6 +1,6 @@
 package com.sk.web.service.imp;
 
-import com.sk.model.ResultModel;
+import com.sk.model.ResultJsonModel;
 import com.sk.web.mapper.ConsumeMapper;
 import com.sk.web.mapper.MembershipMapper;
 import com.sk.web.model.Consume;
@@ -26,7 +26,7 @@ public class ConsumeImpl extends BaseImpl<Consume, ConsumeExample> implements Co
 
     @Transactional
     @Override
-    public ResultModel<Consume> insert(Consume record) {
+    public ResultJsonModel<Consume> insert(Consume record) {
         //修改会员余额和次数
         MembershipExample e = new MembershipExample();
         e.createCriteria().andIdEqualTo(record.getMemId());

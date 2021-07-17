@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.sk.web.EncryptTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-24T06:22:32" hostname="DESKTOP-F6M0QCO" time="0.069">
+<testsuite name="com.sk.web.EncryptTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-17T15:21:32" hostname="DESKTOP-F6M0QCO" time="0.122">
   <properties/>
-  <testcase name="contextLoads" classname="com.sk.web.EncryptTest" time="0.069"/>
-  <system-out><![CDATA[14:22:22.719 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sk.web.EncryptTest], using SpringBootContextLoader
-14:22:22.732 [Test worker] INFO  org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.sk.web.EncryptTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-14:22:22.733 [Test worker] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sk.web.EncryptTest]: EncryptTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:22:22.885 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.sk.ServerSpringbootApplication for test class com.sk.web.EncryptTest
-14:22:23.008 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-14:22:23.031 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@30b8e0b9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@575e71cf, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@55228b23, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@74c71cb0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@30d87b9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@27f95e1e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6643b251, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2a2d10b5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@45727a06, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2896c518, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@53bc2b61, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@11d6211b]
+  <testcase name="contextLoads" classname="com.sk.web.EncryptTest" time="0.122"/>
+  <system-out><![CDATA[23:21:21.372 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sk.web.EncryptTest], using SpringBootContextLoader
+23:21:21.386 [Test worker] INFO  org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.sk.web.EncryptTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:21:21.409 [Test worker] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sk.web.EncryptTest]: EncryptTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:21:21.613 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.sk.ServerSpringbootApplication for test class com.sk.web.EncryptTest
+23:21:21.735 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:21:21.758 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@734ab6a0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5d1741da, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@748196df, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5b995b16, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d400973, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a3e9e90, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6271d466, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@732162d5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@ed7e653, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@60733307, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@ccd098b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7402f50d]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -17,124 +17,130 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.2.RELEASE)
 
-14:22:23.537 [Test worker] INFO  com.sk.web.EncryptTest - Starting EncryptTest on DESKTOP-F6M0QCO with PID 16308 (started by jinsh in D:\work\stone\api-server\api-web)
-14:22:23.538 [Test worker] INFO  com.sk.web.EncryptTest - The following profiles are active: dev
-14:22:25.611 [Test worker] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.sk]' package. Please check your configuration.
-14:22:25.685 [Test worker] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-14:22:25.757 [Test worker] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56ms. Found 0 repository interfaces.
-14:22:26.208 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.configuration.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
-14:22:26.306 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
-14:22:26.307 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource Inlined Test Properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
-14:22:26.307 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
-14:22:26.307 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
-14:22:26.308 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
-14:22:26.309 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application-dev.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
-14:22:26.309 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
-14:22:26.348 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.filter.DefaultLazyPropertyFilter - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
-14:22:26.434 [Test worker] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d9beac4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-14:22:26.527 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.resolver.DefaultLazyPropertyResolver - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
-14:22:26.531 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.detector.DefaultLazyPropertyDetector - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
-14:22:26.537 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
-14:22:26.550 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.algorithm, using default value: PBEWithMD5AndDES
-14:22:26.551 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.key-obtention-iterations, using default value: 1000
-14:22:26.552 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.pool-size, using default value: 1
-14:22:26.552 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.provider-name, using default value: null
-14:22:26.553 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.provider-class-name, using default value: null
-14:22:26.554 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.salt-generator-classname, using default value: org.jasypt.salt.RandomSaltGenerator
-14:22:26.556 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.iv-generator-classname, using default value: org.jasypt.iv.NoIvGenerator
-14:22:26.558 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.string-output-type, using default value: base64
-14:22:26.890 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - SomeThingHikariCP - Starting...
-14:22:27.075 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - SomeThingHikariCP - Start completed.
-14:22:27.188 [Test worker] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+23:21:22.340 [Test worker] INFO  com.sk.web.EncryptTest - Starting EncryptTest on DESKTOP-F6M0QCO with PID 17204 (started by jinsh in D:\work\stone\api-server\api-web)
+23:21:22.341 [Test worker] INFO  com.sk.web.EncryptTest - The following profiles are active: dev
+23:21:24.811 [Test worker] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.sk]' package. Please check your configuration.
+23:21:24.903 [Test worker] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+23:21:24.999 [Test worker] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79ms. Found 0 repository interfaces.
+23:21:25.578 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.configuration.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
+23:21:25.703 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+23:21:25.703 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource Inlined Test Properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+23:21:25.704 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+23:21:25.704 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+23:21:25.704 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+23:21:25.706 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application-dev.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+23:21:25.707 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+23:21:25.793 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.filter.DefaultLazyPropertyFilter - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+23:21:25.918 [Test worker] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7d12c3fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:21:26.070 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.resolver.DefaultLazyPropertyResolver - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+23:21:26.077 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.detector.DefaultLazyPropertyDetector - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+23:21:26.081 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
+23:21:26.102 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.algorithm, using default value: PBEWithMD5AndDES
+23:21:26.103 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.key-obtention-iterations, using default value: 1000
+23:21:26.110 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.pool-size, using default value: 1
+23:21:26.111 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.provider-name, using default value: null
+23:21:26.118 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.provider-class-name, using default value: null
+23:21:26.120 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.salt-generator-classname, using default value: org.jasypt.salt.RandomSaltGenerator
+23:21:26.126 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.iv-generator-classname, using default value: org.jasypt.iv.NoIvGenerator
+23:21:26.129 [Test worker] INFO  com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor - Encryptor config not found for property jasypt.encryptor.string-output-type, using default value: base64
+23:21:26.566 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - SomeThingHikariCP - Starting...
+23:21:26.768 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - SomeThingHikariCP - Start completed.
+23:21:26.888 [Test worker] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-14:22:27.299 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.7.Final}
-14:22:27.301 [Test worker] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-14:22:27.657 [Test worker] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-14:22:27.882 [Test worker] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-14:22:28.169 [Test worker] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-14:22:30.426 [Test worker] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-14:22:31.071 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
-14:22:31.072 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
-14:22:31.073 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
-14:22:31.077 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear EntityHelper entityTableMap cache.
-14:22:31.177 [Test worker] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-14:22:31.570 [Test worker] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-14:22:31.604 [Test worker] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-14:22:31.659 [Test worker] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-14:22:31.870 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_1
-14:22:31.874 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_1
-14:22:31.878 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
-14:22:31.880 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_1
-14:22:31.882 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_1
-14:22:31.891 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_2
-14:22:31.893 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_2
-14:22:31.895 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
-14:22:31.898 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_2
-14:22:31.901 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_2
-14:22:31.909 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_3
-14:22:31.914 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
-14:22:31.917 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_3
-14:22:31.934 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_4
-14:22:31.937 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_3
-14:22:31.940 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
-14:22:31.943 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_4
-14:22:31.947 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_1
-14:22:31.951 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_3
-14:22:31.955 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
-14:22:31.963 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_5
-14:22:31.968 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_4
-14:22:31.971 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertForWxUsingPOST_1
-14:22:31.974 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_5
-14:22:31.979 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_2
-14:22:31.982 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_4
-14:22:31.986 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
-14:22:31.988 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_3
-14:22:31.994 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_6
-14:22:31.999 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_5
-14:22:32.001 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
-14:22:32.007 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_5
-14:22:32.019 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_7
-14:22:32.021 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_6
-14:22:32.025 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
-14:22:32.027 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_6
-14:22:32.030 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_4
-14:22:32.031 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_6
-14:22:32.037 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_8
-14:22:32.040 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_7
-14:22:32.042 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
-14:22:32.045 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_7
-14:22:32.047 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_7
-14:22:32.053 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_9
-14:22:32.055 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_8
-14:22:32.058 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
-14:22:32.061 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_8
-14:22:32.062 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_8
-14:22:32.068 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_10
-14:22:32.070 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_9
-14:22:32.073 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_11
-14:22:32.076 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_9
-14:22:32.078 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_9
-14:22:32.083 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_11
-14:22:32.086 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_10
-14:22:32.088 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_12
-14:22:32.091 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_10
-14:22:32.093 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_10
-14:22:32.098 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_12
-14:22:32.100 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_11
-14:22:32.102 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_13
-14:22:32.104 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_11
-14:22:32.106 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_11
-14:22:32.111 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_13
-14:22:32.113 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_12
-14:22:32.115 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_14
-14:22:32.118 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_12
-14:22:32.120 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_5
-14:22:32.123 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_12
-14:22:32.151 [Test worker] INFO  com.sk.web.EncryptTest - Started EncryptTest in 9.077 seconds (JVM running for 11.004)
-username:WEdUQLMefy/8XL4TKBi8Sw==
-password:v0ytiOtNCtIC5NN5r6jKxA==
-password1:FrqzlKgrB3lLz5K7ezhusi7tZERz9iYS
+23:21:27.010 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.7.Final}
+23:21:27.012 [Test worker] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+23:21:27.409 [Test worker] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+23:21:27.811 [Test worker] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+23:21:28.162 [Test worker] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+23:21:30.455 [Test worker] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+23:21:31.051 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+23:21:31.052 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+23:21:31.054 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+23:21:31.054 [Test worker] INFO  tk.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear EntityHelper entityTableMap cache.
+23:21:31.150 [Test worker] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+23:21:31.820 [Test worker] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+23:21:31.853 [Test worker] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+23:21:31.894 [Test worker] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+23:21:32.120 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_1
+23:21:32.124 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_1
+23:21:32.130 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_1
+23:21:32.133 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_1
+23:21:32.135 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_1
+23:21:32.142 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_2
+23:21:32.145 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_2
+23:21:32.148 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_2
+23:21:32.150 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_2
+23:21:32.152 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_2
+23:21:32.163 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_3
+23:21:32.165 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_3
+23:21:32.167 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_3
+23:21:32.170 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_3
+23:21:32.172 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_3
+23:21:32.180 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_4
+23:21:32.185 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_4
+23:21:32.187 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_4
+23:21:32.194 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_1
+23:21:32.220 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_5
+23:21:32.224 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_4
+23:21:32.227 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_5
+23:21:32.230 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_5
+23:21:32.232 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_2
+23:21:32.235 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_4
+23:21:32.239 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_6
+23:21:32.246 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_6
+23:21:32.250 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_5
+23:21:32.255 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertForWxUsingPOST_1
+23:21:32.257 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_6
+23:21:32.262 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_3
+23:21:32.265 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_5
+23:21:32.270 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_7
+23:21:32.273 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_4
+23:21:32.280 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_7
+23:21:32.287 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_6
+23:21:32.289 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_8
+23:21:32.292 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_6
+23:21:32.302 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_8
+23:21:32.304 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_7
+23:21:32.310 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_9
+23:21:32.312 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_7
+23:21:32.315 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_5
+23:21:32.319 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_7
+23:21:32.324 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_9
+23:21:32.326 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_8
+23:21:32.328 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_10
+23:21:32.330 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_8
+23:21:32.335 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_8
+23:21:32.340 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_10
+23:21:32.342 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_9
+23:21:32.344 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_11
+23:21:32.346 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_9
+23:21:32.349 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_9
+23:21:32.355 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_11
+23:21:32.358 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_10
+23:21:32.359 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_12
+23:21:32.361 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_10
+23:21:32.363 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_10
+23:21:32.368 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_12
+23:21:32.370 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_11
+23:21:32.372 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_13
+23:21:32.374 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_11
+23:21:32.376 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_11
+23:21:32.382 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_13
+23:21:32.384 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_12
+23:21:32.386 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_14
+23:21:32.389 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_12
+23:21:32.392 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_12
+23:21:32.399 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingPOST_14
+23:21:32.400 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: insertUsingPOST_13
+23:21:32.402 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectAllUsingGET_15
+23:21:32.404 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectOneUsingGET_13
+23:21:32.407 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: selectPageUsingGET_6
+23:21:32.409 [Test worker] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_13
+23:21:32.436 [Test worker] INFO  com.sk.web.EncryptTest - Started EncryptTest in 10.636 seconds (JVM running for 12.923)
+username:FyT2deSTuER12Epzo1oyNg==
+password:FK1x3aohiaOibbjIC1Tizw==
+password1:f7xApSHzEzCUHrfSpVNbLOXuZml3Zaws
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

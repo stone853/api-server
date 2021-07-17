@@ -1,18 +1,9 @@
 package com.sk.web.interceptor;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
-import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTDecodeException;
-import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.sk.exception.BizException;
-import com.sk.model.ResultModel;
-import com.sk.web.model.Membership;
 import com.sk.web.service.MembershipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
-import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -50,7 +41,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 //            throw new BizException("401","token获取用户信息失败");
 //        }
 //        //MembershipService service = getMembershipService();
-//        ResultModel<Membership> resultModel = service.selectOne(t);
+//        ResultListModel<Membership> resultModel = service.selectOne(t);
 //        if (resultModel.getCode() <0 || null == resultModel.getList() || resultModel.getList().size() ==0) {
 //            throw new BizException("401","用户不存在，请重新登录");
 //        }

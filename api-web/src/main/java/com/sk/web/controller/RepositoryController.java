@@ -1,6 +1,6 @@
 package com.sk.web.controller;
 
-import com.sk.model.ResultModel;
+import com.sk.model.ResultModelImp;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Repository;
 import com.sk.web.model.RepositoryExample;
@@ -23,35 +23,35 @@ public class RepositoryController {
     @ApiOperation("查询所有库存信息")
     @ApiImplicitParam
     @GetMapping("/v1/selectAll")
-    public ResultModel<Repository> selectAll(@RequestHeader("token") String token,Repository t){
+    public ResultModelImp<Repository> selectAll(@RequestHeader("token") String token, Repository t){
         return repositoryService.selectAll(t);
     }
 
     @ApiOperation("查询单个库存")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<Repository> selectOne(@RequestHeader("token") String token,Repository t){
+    public ResultModelImp<Repository> selectOne(@RequestHeader("token") String token, Repository t){
         return repositoryService.selectOne(t);
     }
 
     @ApiOperation("增加库存")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<Repository> insert(@RequestHeader("token") String token,@RequestBody Repository t){
+    public ResultModelImp<Repository> insert(@RequestHeader("token") String token, @RequestBody Repository t){
         return repositoryService.insert(t);
     }
 
     @ApiOperation("删除库存")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<Repository> delete(@RequestHeader("token") String token,@RequestBody Repository t){
+    public ResultModelImp<Repository> delete(@RequestHeader("token") String token, @RequestBody Repository t){
         return repositoryService.delete(t);
     }
 
     @ApiOperation("更新库存信息")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "repository",dataTypeClass = Repository.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<Repository> update(@RequestHeader("token") String token,@RequestBody Repository t){
+    public ResultModelImp<Repository> update(@RequestHeader("token") String token, @RequestBody Repository t){
         RepositoryExample e = new RepositoryExample();
         e.createCriteria().andIdEqualTo(t.getId());
         return repositoryService.update(t,e);

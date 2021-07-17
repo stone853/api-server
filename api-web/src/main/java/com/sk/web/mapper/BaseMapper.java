@@ -13,5 +13,5 @@ import java.util.List;
  */
 @RegisterMapper
 public interface BaseMapper<T> extends Mapper<T> {
-    List<T> selectPage(T t);
+    List selectPage(T t);
 }

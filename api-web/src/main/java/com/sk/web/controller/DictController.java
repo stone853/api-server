@@ -1,6 +1,6 @@
 package com.sk.web.controller;
 
-import com.sk.model.ResultModel;
+import com.sk.model.ResultModelImp;
 import com.sk.web.constant.RequestCommonPathConstant;
 import com.sk.web.model.Dict;
 import com.sk.web.service.DictService;
@@ -24,7 +24,7 @@ public class DictController {
 
     @ApiOperation("查询列表")
     @GetMapping("/v1/selectAll")
-    public ResultModel<Dict> selectAll(Dict t){
+    public ResultModelImp<Dict> selectAll(Dict t){
         return dictService.selectAll(t);
     }
 

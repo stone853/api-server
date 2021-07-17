@@ -19,11 +19,17 @@ public class TcrmProductinfo {
 
     private BigDecimal priceDiscount;
 
+    private String color;
+
+    private Integer size;
+
     private String tag;
 
     private String subhead;
 
     private String isDiscount;
+
+    private String store;
 
     private String createtime;
 
@@ -93,6 +99,22 @@ public class TcrmProductinfo {
         this.priceDiscount = priceDiscount;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color == null ? null : color.trim();
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     public String getTag() {
         return tag;
     }
@@ -115,6 +137,14 @@ public class TcrmProductinfo {
 
     public void setIsDiscount(String isDiscount) {
         this.isDiscount = isDiscount == null ? null : isDiscount.trim();
+    }
+
+    public String getStore() {
+        return store;
+    }
+
+    public void setStore(String store) {
+        this.store = store == null ? null : store.trim();
     }
 
     public String getCreatetime() {

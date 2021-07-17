@@ -48,6 +48,7 @@ public class PageResult {
     /**
      * 数据模型
      */
+
     private List<?> list;
     public int getPageNum() {
         return pageNum;

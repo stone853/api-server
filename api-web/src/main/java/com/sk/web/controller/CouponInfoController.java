@@ -1,7 +1,8 @@
 package com.sk.web.controller;
 
 import com.sk.model.ResultEnum;
-import com.sk.model.ResultModel;
+import com.sk.model.ResultListModel;
+import com.sk.model.ResultModelImp;
 import com.sk.page.PageRequest;
 import com.sk.page.PageResult;
 import com.sk.web.constant.RequestCommonPathConstant;
@@ -30,7 +31,7 @@ public class CouponInfoController {
 
     @ApiOperation("查询所有优惠券")
     @GetMapping("/v1/selectAll")
-    public ResultModel<CouponInfo> selectAll(@RequestHeader("token") String token,CouponInfo t){
+    public ResultModelImp<CouponInfo> selectAll(@RequestHeader("token") String token, CouponInfo t){
         return couponInfoService.selectAll(t);
     }
 
@@ -45,33 +46,33 @@ public class CouponInfoController {
     @ApiOperation("查询单个优惠券")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @GetMapping("/v1/selectOne")
-    public ResultModel<CouponInfo> selectOne(@RequestHeader("token") String token,CouponInfo t){
+    public ResultModelImp<CouponInfo> selectOne(@RequestHeader("token") String token, CouponInfo t){
         return couponInfoService.selectOne(t);
     }
 
     @ApiOperation("增加优惠券(微信)")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @PostMapping("/v1/insert")
-    public ResultModel<CouponInfo> insertForWx(@RequestHeader("token") String token,@RequestBody CouponInfo t) {
+    public ResultModelImp<CouponInfo> insertForWx(@RequestHeader("token") String token, @RequestBody CouponInfo t) {
         return couponInfoService.insert(t.setOpenId(UserHelper.getOpenId(token)));
     }
 
     @ApiOperation("删除优惠券")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @PostMapping("/v1/delete")
-    public ResultModel<CouponInfo> delete(@RequestHeader("token") String token,@RequestBody CouponInfo t){
+    public ResultModelImp<CouponInfo> delete(@RequestHeader("token") String token, @RequestBody CouponInfo t){
         return couponInfoService.delete(t);
     }
 
     @ApiOperation("消券(微信)")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "CouponInfo",dataTypeClass = CouponInfo.class , value ="")})
     @PostMapping("/v1/update")
-    public ResultModel<CouponInfo> updateWx(@RequestHeader("token") String token,@RequestBody CouponInfo t){
+    public ResultListModel<CouponInfo> updateWx(@RequestHeader("token") String token, @RequestBody CouponInfo t){
         if (null == t.getId() || "".equals(t.getId())) {
-            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("请选中您要消除的优惠券（id不能为空）");
+            return new ResultListModel().setCode(ResultEnum.ERROR.getCode()).setMessage("请选中您要消除的优惠券（id不能为空）");
         }
         if (null == t.getStatus() || !"0".equals(t.getStatus())) {
-            return new ResultModel().setCode(ResultEnum.ERROR.getCode()).setMessage("消券状态有误（status应为0）");
+            return new ResultListModel().setCode(ResultEnum.ERROR.getCode()).setMessage("消券状态有误（status应为0）");
         }
         CouponInfoExample e = new CouponInfoExample();
         e.createCriteria().andIdEqualTo(t.getId());

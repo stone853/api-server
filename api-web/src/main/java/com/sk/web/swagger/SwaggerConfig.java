@@ -45,7 +45,11 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo() {
         Contact contact = new Contact("sk", "", "jinshixt@163.com");
-        return new ApiInfoBuilder().title("api-server 测试文档").description("dev by sk").contact(contact)
+        return new ApiInfoBuilder().title("api-server 不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。" +
+                "不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。" +
+                "不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。" +
+                "不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。不是僵尸网站，是接口。" +
+                "不是僵尸网站，是接口。不是僵尸网站，是接口。").description("dev by sk").contact(contact)
                 .version("1.0.0").build();
     }
 
