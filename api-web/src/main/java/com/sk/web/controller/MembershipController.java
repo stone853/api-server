@@ -17,6 +17,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @Api(tags = "会员信息")
 @RestController
@@ -24,6 +26,10 @@ import org.springframework.web.bind.annotation.*;
 public class MembershipController {
     @Autowired
     MembershipService membershipService;
+
+
+    @Autowired
+    private HttpServletRequest httpRequest;
 
 //    @ApiOperation("查询所有会员")
 //    @ApiImplicitParam
@@ -72,7 +78,7 @@ public class MembershipController {
         if (null == openId || "".equals(openId)) {
             return new ResultJsonModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }
-        return membershipService.insert(new Membership().setSex(json.getSex()).setOpenId(openId).setName(json.getName()).setPassword("666666"));
+        return membershipService.insert(new Membership().setSex(json.getSex()).setOpenId(openId).setNickName(json.getName()).setPassword("666666"));
     }
 
     @ApiOperation("增加会员")
@@ -94,8 +100,23 @@ public class MembershipController {
     @PostMapping("/v1/update")
     public ResultModelImp<Membership> update(@RequestHeader("token") String token, @RequestBody Membership t){
         MembershipExample e = new MembershipExample();
-        e.createCriteria().andIdEqualTo(t.getId());
+        String openid = httpRequest.getSession().getAttribute("openid").toString();
+        t.setOpenId(openid);
+        e.createCriteria().andOpenIdEqualTo(openid);
         return membershipService.update(t,e);
+    }
+
+    @ApiOperation("更新会员信息")
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "Membership",dataTypeClass = Membership.class , value ="")})
+    @PostMapping("/v1/updateMyPage")
+    public ResultModelImp<Membership> updateMyPage(@RequestHeader("token") String token, @RequestBody Membership t){
+        MembershipExample e = new MembershipExample();
+        String openid = "ole3v4pD7PlnJZbC96KHo-m1IC54";
+        //String openid = httpRequest.getSession().getAttribute("openid").toString();
+        t.setOpenId(openid);
+        e.createCriteria().andOpenIdEqualTo(openid);
+        ResultJsonModel r = membershipService.update(t,e);
+        return r.setData(membershipService.selectFullMy(t).getData());
     }
 
 }

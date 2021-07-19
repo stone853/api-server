@@ -14,6 +14,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @Api(tags = "用户接口")
 @RestController
@@ -24,6 +26,9 @@ public class UserApi {
 
     @Autowired
     CrmConfig crmConfig;
+
+    @Autowired
+    private HttpServletRequest httpRequest;
 
     @ApiOperation("登陆")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "code",dataTypeClass = String.class , value ="",required = true)})
@@ -37,6 +42,8 @@ public class UserApi {
         if(resultModel.getCode() < 0 || resultModel.getData() == null){
             return new ResultJsonModel<Membership>().setCode(ResultEnum.ERROR.getCode()).setMessage("通过openid获取用户信息失败");
         }
+
+        httpRequest.getSession().setAttribute("openid",openId);
         return new ResultJsonModel<Membership>().setCode(ResultEnum.SUCCESS.getCode()).setMessage(membershipService.getToken(resultModel.getData()));
     }
 

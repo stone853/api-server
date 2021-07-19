@@ -59,7 +59,7 @@ crm:
   upload:
     image:
       url: D://images/
-  getToken : 0
+  getToken : 2
 
 jasypt:
   encryptor:

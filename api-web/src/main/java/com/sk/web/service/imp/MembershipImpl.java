@@ -3,6 +3,8 @@ package com.sk.web.service.imp;
 import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;;
+import com.sk.model.ResultEnum;
+import com.sk.model.ResultJsonModel;
 import com.sk.utils.HttpUtil;
 import com.sk.web.constant.CommonConstant;
 import com.sk.web.mapper.MembershipMapper;
@@ -15,11 +17,18 @@ import java.util.Date;
 
 @Service
 public class MembershipImpl extends BaseImpl<Membership, MembershipExample> implements MembershipService{
+    @Autowired
+    MembershipMapper<Membership> memberMapper;
 
     @Autowired
     public void setMapper(MembershipMapper<Membership> mapper) {
         this.mapper = mapper;
     }
+
+    public ResultJsonModel selectFullMy(Membership record) {
+        return new ResultJsonModel().setCode(ResultEnum.SUCCESS.getCode()).setMessage(ResultEnum.SUCCESS.getMsg()).setData(new JSONObject(memberMapper.selectFullMem(record)));
+    }
+
 
     public String getToken(Membership t) {
         return JWT.create().withExpiresAt(new Date(System.currentTimeMillis() + CommonConstant.EXPIRE_TIME))

@@ -3,30 +3,86 @@
 <mapper namespace="com.sk.web.mapper.MembershipMapper">
   <resultMap id="BaseResultMap" type="com.sk.web.model.Membership">
     <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="order_num" jdbcType="SMALLINT" property="orderNum" />
+    <result column="exp_num" jdbcType="INTEGER" property="expNum" />
+    <result column="intergra_num" jdbcType="INTEGER" property="intergraNum" />
+    <result column="is_store" jdbcType="TINYINT" property="isStore" />
+    <result column="leveltime" jdbcType="VARCHAR" property="leveltime" />
+    <result column="is_vip" jdbcType="SMALLINT" property="isVip" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="qr_code" jdbcType="VARCHAR" property="qrCode" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="referentid" jdbcType="VARCHAR" property="referentid" />
+    <result column="referent_num" jdbcType="SMALLINT" property="referentNum" />
+    <result column="r" jdbcType="VARCHAR" property="r" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="balance" jdbcType="DECIMAL" property="balance" />
     <result column="count" jdbcType="INTEGER" property="count" />
-    <result column="open_id" jdbcType="VARCHAR" property="openId" />
-    <result column="is_admin" jdbcType="SMALLINT" property="isAdmin" />
+    <result column="updatetime" jdbcType="VARCHAR" property="updatetime" />
   </resultMap>
 
 
-  <select id="selectPage"  resultType="java.util.Map" parameterType="com.sk.web.model.Membership">
+  <resultMap id="BaseResultMap1" type="java.util.Map">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="order_num" jdbcType="SMALLINT" property="orderNum" />
+    <result column="exp_num" jdbcType="INTEGER" property="expNum" />
+    <result column="intergra_num" jdbcType="INTEGER" property="intergraNum" />
+    <result column="is_store" jdbcType="TINYINT" property="isStore" />
+    <result column="leveltime" jdbcType="VARCHAR" property="leveltime" />
+    <result column="is_vip" jdbcType="SMALLINT" property="isVip" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="qr_code" jdbcType="VARCHAR" property="qrCode" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="referentid" jdbcType="VARCHAR" property="referentid" />
+    <result column="referent_num" jdbcType="SMALLINT" property="referentNum" />
+    <result column="r" jdbcType="VARCHAR" property="r" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="balance" jdbcType="DECIMAL" property="balance" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="updatetime" jdbcType="VARCHAR" property="updatetime" />
+    <result column="carNum" jdbcType="SMALLINT" property="carNum" />
+  </resultMap>
+
+
+  <select id="selectPage"  resultMap="BaseResultMap1" parameterType="com.sk.web.model.Membership">
     select
-    t.id,t.name,t.phone,t.sex,t.level,t.balance,t.count
-    from tcrm_membership t where 1=1
+    t1.*,(select sum(t2.count) carNum from tcrm_cart t2 where t1.open_id = t2.openid group by t2.openid) carNum
+    from tcrm_membership t1 where 1=1
     <if test="id != null and id != ''">
       and id=#{id}
     </if>
-    <if test="name != null and name != ''">
-      and name like '%${name}%'
+    <if test="nickName != null and nickName != ''">
+      and nick_name like '%${nickName}%'
     </if>
     <if test="phone != null and phone != ''">
       and phone=#{phone}
+    </if>
+  </select>
+
+
+  <select id="selectFullMem"  resultMap="BaseResultMap1" parameterType="com.sk.web.model.Membership">
+    select
+    t1.*,(select sum(t2.count) carNum from tcrm_cart t2 where t1.open_id = t2.openid group by t2.openid) carNum
+    from tcrm_membership t1 where 1=1
+    <if test="id != null and id != ''">
+      and id=#{id}
+    </if>
+    <if test="nickName != null and nickName != ''">
+      and nick_name like '%${nickName}%'
+    </if>
+    <if test="phone != null and phone != ''">
+      and phone=#{phone}
+    </if>
+    <if test="openId != null and openId != ''">
+      and open_id=#{openId}
     </if>
   </select>
 </mapper>

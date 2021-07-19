@@ -3,6 +3,369 @@
 <mapper namespace="com.sk.web.dao.TcrmMembershipMapper">
   <resultMap id="BaseResultMap" type="com.sk.web.model.TcrmMembership">
     <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="order_num" jdbcType="SMALLINT" property="orderNum" />
+    <result column="exp_num" jdbcType="INTEGER" property="expNum" />
+    <result column="intergra_num" jdbcType="INTEGER" property="intergraNum" />
+    <result column="is_store" jdbcType="TINYINT" property="isStore" />
+    <result column="leveltime" jdbcType="VARCHAR" property="leveltime" />
+    <result column="is_vip" jdbcType="SMALLINT" property="isVip" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="qr_code" jdbcType="VARCHAR" property="qrCode" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="referentid" jdbcType="VARCHAR" property="referentid" />
+    <result column="referent_num" jdbcType="SMALLINT" property="referentNum" />
+    <result column="r" jdbcType="VARCHAR" property="r" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="balance" jdbcType="DECIMAL" property="balance" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="updatetime" jdbcType="VARCHAR" property="updatetime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, open_id, phone, level, order_num, exp_num, intergra_num, is_store, leveltime, 
+    is_vip, nickname, avatar_url, qr_code, password, referentid, referent_num, r, sex, 
+    balance, count, updatetime
+  </sql>
+  <select id="selectByExample" parameterType="com.sk.web.model.TcrmMembershipExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tcrm_membership
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.sk.web.model.TcrmMembershipExample">
+    delete from tcrm_membership
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sk.web.model.TcrmMembership">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tcrm_membership (id, open_id, phone, 
+      level, order_num, exp_num, 
+      intergra_num, is_store, leveltime, 
+      is_vip, nickname, avatar_url, 
+      qr_code, password, referentid, 
+      referent_num, r, sex, 
+      balance, count, updatetime
+      )
+    values (#{id,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{level,jdbcType=VARCHAR}, #{orderNum,jdbcType=SMALLINT}, #{expNum,jdbcType=INTEGER}, 
+      #{intergraNum,jdbcType=INTEGER}, #{isStore,jdbcType=TINYINT}, #{leveltime,jdbcType=VARCHAR}, 
+      #{isVip,jdbcType=SMALLINT}, #{nickname,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, 
+      #{qrCode,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{referentid,jdbcType=VARCHAR}, 
+      #{referentNum,jdbcType=SMALLINT}, #{r,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, 
+      #{balance,jdbcType=DECIMAL}, #{count,jdbcType=INTEGER}, #{updatetime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sk.web.model.TcrmMembership">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tcrm_membership
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      id,
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="orderNum != null">
+        order_num,
+      </if>
+      <if test="expNum != null">
+        exp_num,
+      </if>
+      <if test="intergraNum != null">
+        intergra_num,
+      </if>
+      <if test="isStore != null">
+        is_store,
+      </if>
+      <if test="leveltime != null">
+        leveltime,
+      </if>
+      <if test="isVip != null">
+        is_vip,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="avatarUrl != null">
+        avatar_url,
+      </if>
+      <if test="qrCode != null">
+        qr_code,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="referentid != null">
+        referentid,
+      </if>
+      <if test="referentNum != null">
+        referent_num,
+      </if>
+      <if test="r != null">
+        r,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="balance != null">
+        balance,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=INTEGER},
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=SMALLINT},
+      </if>
+      <if test="expNum != null">
+        #{expNum,jdbcType=INTEGER},
+      </if>
+      <if test="intergraNum != null">
+        #{intergraNum,jdbcType=INTEGER},
+      </if>
+      <if test="isStore != null">
+        #{isStore,jdbcType=TINYINT},
+      </if>
+      <if test="leveltime != null">
+        #{leveltime,jdbcType=VARCHAR},
+      </if>
+      <if test="isVip != null">
+        #{isVip,jdbcType=SMALLINT},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarUrl != null">
+        #{avatarUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="qrCode != null">
+        #{qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="referentid != null">
+        #{referentid,jdbcType=VARCHAR},
+      </if>
+      <if test="referentNum != null">
+        #{referentNum,jdbcType=SMALLINT},
+      </if>
+      <if test="r != null">
+        #{r,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DECIMAL},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sk.web.model.TcrmMembershipExample" resultType="java.lang.Long">
+    select count(*) from tcrm_membership
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tcrm_membership
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.openId != null">
+        open_id = #{record.openId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.level != null">
+        level = #{record.level,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderNum != null">
+        order_num = #{record.orderNum,jdbcType=SMALLINT},
+      </if>
+      <if test="record.expNum != null">
+        exp_num = #{record.expNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.intergraNum != null">
+        intergra_num = #{record.intergraNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.isStore != null">
+        is_store = #{record.isStore,jdbcType=TINYINT},
+      </if>
+      <if test="record.leveltime != null">
+        leveltime = #{record.leveltime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isVip != null">
+        is_vip = #{record.isVip,jdbcType=SMALLINT},
+      </if>
+      <if test="record.nickname != null">
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.avatarUrl != null">
+        avatar_url = #{record.avatarUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qrCode != null">
+        qr_code = #{record.qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.referentid != null">
+        referentid = #{record.referentid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.referentNum != null">
+        referent_num = #{record.referentNum,jdbcType=SMALLINT},
+      </if>
+      <if test="record.r != null">
+        r = #{record.r,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null">
+        sex = #{record.sex,jdbcType=INTEGER},
+      </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.count != null">
+        count = #{record.count,jdbcType=INTEGER},
+      </if>
+      <if test="record.updatetime != null">
+        updatetime = #{record.updatetime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tcrm_membership
+    set id = #{record.id,jdbcType=INTEGER},
+      open_id = #{record.openId,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      level = #{record.level,jdbcType=VARCHAR},
+      order_num = #{record.orderNum,jdbcType=SMALLINT},
+      exp_num = #{record.expNum,jdbcType=INTEGER},
+      intergra_num = #{record.intergraNum,jdbcType=INTEGER},
+      is_store = #{record.isStore,jdbcType=TINYINT},
+      leveltime = #{record.leveltime,jdbcType=VARCHAR},
+      is_vip = #{record.isVip,jdbcType=SMALLINT},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      avatar_url = #{record.avatarUrl,jdbcType=VARCHAR},
+      qr_code = #{record.qrCode,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      referentid = #{record.referentid,jdbcType=VARCHAR},
+      referent_num = #{record.referentNum,jdbcType=SMALLINT},
+      r = #{record.r,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=INTEGER},
+      balance = #{record.balance,jdbcType=DECIMAL},
+      count = #{record.count,jdbcType=INTEGER},
+      updatetime = #{record.updatetime,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <resultMap id="BaseResultMap" type="com.sk.web.model.TcrmMembership">
+    <result column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
