@@ -46,32 +46,47 @@ public class CartController {
     }
 
 
+//    @ApiOperation("分页查询所有购物车(相同产品已汇总)")
+//    @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
+//    @GetMapping("/v1/selectGroupByP")
+//    public PageResult selectGroupByP(@RequestHeader("token") String token,PageRequest pageQuery,Cart t){
+//        PageResult r = cartService.findPage(pageQuery,t);
+//        List<Map> list = (List<Map>) r.getList();
+//        List nList = new ArrayList();
+//        list.parallelStream().collect(Collectors.groupingBy(o -> (o.get("pid").toString() + o.get("color") + o.get("size")), Collectors.toList())).forEach(
+//                (id,transfer) -> {
+//                    transfer.stream().reduce((a,b) -> {
+//                        Map map = new HashMap();
+//                        a.forEach((k,v) ->{
+//                            if (k.equals("count")) {
+//                                map.put("count",Integer.parseInt(a.get(k).toString()) + Integer.parseInt(b.get(k).toString()));
+//                            } else {
+//                                map.put(k,v);
+//                            }
+//                        });
+//                        return  map;
+//                    }).ifPresent(nList::add);
+//                });
+//
+//        Map storeMap = new HashMap();
+//        storeMap.put("id","1");
+//        storeMap.put("name","服装店");
+//        storeMap.put("order",nList);
+//        List storeList = new ArrayList();
+//        storeList.add(storeMap);
+//        r.setList(storeList);
+//        return r;
+//    }
+
     @ApiOperation("分页查询所有购物车(相同产品已汇总)")
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
     @GetMapping("/v1/selectGroupByP")
     public PageResult selectGroupByP(@RequestHeader("token") String token,PageRequest pageQuery,Cart t){
         PageResult r = cartService.findPage(pageQuery,t);
-        List<Map> list = (List<Map>) r.getList();
-        List nList = new ArrayList();
-        list.parallelStream().collect(Collectors.groupingBy(o -> (o.get("pid").toString() + o.get("color") + o.get("size")), Collectors.toList())).forEach(
-                (id,transfer) -> {
-                    transfer.stream().reduce((a,b) -> {
-                        Map map = new HashMap();
-                        a.forEach((k,v) ->{
-                            if (k.equals("count")) {
-                                map.put("count",Integer.parseInt(a.get(k).toString()) + Integer.parseInt(b.get(k).toString()));
-                            } else {
-                                map.put(k,v);
-                            }
-                        });
-                        return  map;
-                    }).ifPresent(nList::add);
-                });
-
         Map storeMap = new HashMap();
         storeMap.put("id","1");
         storeMap.put("name","服装店");
-        storeMap.put("order",nList);
+        storeMap.put("order",cartService.findPage(pageQuery,t).getList());
         List storeList = new ArrayList();
         storeList.add(storeMap);
         r.setList(storeList);
@@ -109,15 +124,11 @@ public class CartController {
     public ResultModelImp<Cart> update(@RequestHeader("token") String token, @RequestBody Cart t){
         CartExample e = new CartExample();
         e.createCriteria().andIdEqualTo(t.getId());
+        t.setOpenid(UserHelper.getOpenId(token));
+        if (t.getCount() == null || t.getCount() == 0) {
+            return cartService.delete(t);
+        }
         return cartService.update(t,e);
     }
-
-
-
-
-
-
-
-
 
 }

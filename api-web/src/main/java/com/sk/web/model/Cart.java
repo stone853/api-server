@@ -29,79 +29,89 @@ public class Cart {
         return id;
     }
 
-    public void setId(Integer id) {
+    public Cart setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public Integer getPid() {
         return pid;
     }
 
-    public void setPid(Integer pid) {
+    public Cart setPid(Integer pid) {
         this.pid = pid;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Cart setName(String name) {
         this.name = name == null ? null : name.trim();
+        return this;
     }
 
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public Cart setPrice(BigDecimal price) {
         this.price = price;
+        return this;
     }
 
     public Integer getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public Cart setCount(Integer count) {
         this.count = count;
+        return this;
     }
 
     public String getImgUrl() {
         return imgUrl;
     }
 
-    public void setImgUrl(String imgUrl) {
+    public Cart setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl == null ? null : imgUrl.trim();
+        return this;
     }
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public Cart setColor(String color) {
         this.color = color == null ? null : color.trim();
+        return this;
     }
 
     public Double getSize() {
         return size;
     }
 
-    public void setSize(Double size) {
+    public Cart setSize(Double size) {
         this.size = size;
+        return this;
     }
 
     public String getOpenid() {
         return openid;
     }
 
-    public void setOpenid(String openid) {
+    public Cart setOpenid(String openid) {
         this.openid = openid == null ? null : openid.trim();
+        return this;
     }
 
     public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public Cart setCreateTime(String createTime) {
         this.createTime = createTime == null ? null : createTime.trim();
+        return this;
     }
 }

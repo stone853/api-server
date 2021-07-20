@@ -38,9 +38,12 @@ public class UserApi {
         if (null == openId || "".equals(openId)) {
             return new ResultJsonModel().setCode(ResultEnum.ERROR.getCode()).setMessage("未获取到openid");
         }
-        ResultJsonModel<Membership> resultModel= membershipService.selectOne(new Membership().setOpenId(openId));
+        Membership newMem = new Membership();
+        newMem.setOpenId(openId);
+        ResultJsonModel<Membership> resultModel= membershipService.selectOne(newMem);
         if(resultModel.getCode() < 0 || resultModel.getData() == null){
-            return new ResultJsonModel<Membership>().setCode(ResultEnum.ERROR.getCode()).setMessage("通过openid获取用户信息失败");
+            //return new ResultJsonModel<Membership>().setCode(ResultEnum.ERROR.getCode()).setMessage("通过openid获取用户信息失败");
+            membershipService.insert(newMem.setPassword("666666"));
         }
 
         httpRequest.getSession().setAttribute("openid",openId);

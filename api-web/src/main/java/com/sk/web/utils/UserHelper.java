@@ -19,7 +19,6 @@ public class UserHelper {
 
     public static String getOpenId (String token) {
         try {
-
             if (null != token && !"".equals(token)) {
                 return JWT.decode(token).getAudience().get(0);
             }

@@ -111,8 +111,8 @@ public class MembershipController {
     @PostMapping("/v1/updateMyPage")
     public ResultModelImp<Membership> updateMyPage(@RequestHeader("token") String token, @RequestBody Membership t){
         MembershipExample e = new MembershipExample();
-        String openid = "ole3v4pD7PlnJZbC96KHo-m1IC54";
-        //String openid = httpRequest.getSession().getAttribute("openid").toString();
+        //String openid = "ole3v4pD7PlnJZbC96KHo-m1IC54";
+        String openid = httpRequest.getSession().getAttribute("openid").toString();
         t.setOpenId(openid);
         e.createCriteria().andOpenIdEqualTo(openid);
         ResultJsonModel r = membershipService.update(t,e);

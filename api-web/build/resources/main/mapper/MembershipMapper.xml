@@ -70,7 +70,7 @@
 
   <select id="selectFullMem"  resultMap="BaseResultMap1" parameterType="com.sk.web.model.Membership">
     select
-    t1.*,(select sum(t2.count) carNum from tcrm_cart t2 where t1.open_id = t2.openid group by t2.openid) carNum
+    t1.*,(select count(t2.count) carNum from tcrm_cart t2 where t1.open_id = t2.openid group by t2.openid) carNum
     from tcrm_membership t1 where 1=1
     <if test="id != null and id != ''">
       and id=#{id}
