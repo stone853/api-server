@@ -8,9 +8,35 @@
     <result column="parentcode" jdbcType="VARCHAR" property="parentcode" />
   </resultMap>
 
+  <resultMap id="BaseResultMap1" type="java.util.Map">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="id" jdbcType="VARCHAR" property="id" />
+  </resultMap>
+
   <select id="selectPage"  resultMap="BaseResultMap" parameterType="com.sk.web.model.Productinfo">
     select
     *
+    from tcrm_product_dict where 1=1
+    <if test="id != null and id != ''">
+      and id=#{id}
+    </if>
+    <if test="dictcode != null and dictcode != ''">
+      and dictcode=#{dictcode}
+    </if>
+    <if test="dictname != null and dictname != ''">
+      and dictname like '%${dictname}%'
+    </if>
+    <if test="parentcode != null and parentcode != ''">
+      and parentcode=#{parentcode}
+    </if>
+
+    order by parentcode,dictcode asc
+  </select>
+
+
+  <select id="selectIdName"  resultMap="BaseResultMap1" parameterType="com.sk.web.model.Productinfo">
+    select
+    dictcode id,dictname name
     from tcrm_product_dict where 1=1
     <if test="id != null and id != ''">
       and id=#{id}

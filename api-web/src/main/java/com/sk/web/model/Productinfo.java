@@ -57,8 +57,9 @@ public class Productinfo {
         return type;
     }
 
-    public void setType(String type) {
+    public Productinfo setType(String type) {
         this.type = type == null ? null : type.trim();
+        return this;
     }
 
     public String getImgUrl() {

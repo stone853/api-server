@@ -16,31 +16,35 @@ public class ProductDict {
         return id;
     }
 
-    public void setId(Short id) {
+    public ProductDict setId(Short id) {
         this.id = id;
+        return this;
     }
 
     public String getDictname() {
         return dictname;
     }
 
-    public void setDictname(String dictname) {
+    public ProductDict setDictname(String dictname) {
         this.dictname = dictname == null ? null : dictname.trim();
+        return this;
     }
 
     public String getDictcode() {
         return dictcode;
     }
 
-    public void setDictcode(String dictcode) {
+    public ProductDict setDictcode(String dictcode) {
         this.dictcode = dictcode == null ? null : dictcode.trim();
+        return this;
     }
 
     public String getParentcode() {
         return parentcode;
     }
 
-    public void setParentcode(String parentcode) {
+    public ProductDict setParentcode(String parentcode) {
         this.parentcode = parentcode == null ? null : parentcode.trim();
+        return this;
     }
 }

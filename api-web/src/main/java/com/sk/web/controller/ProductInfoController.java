@@ -26,6 +26,7 @@ public class ProductInfoController {
     @Autowired
     ProductInfoService productInfoService;
 
+
     @ApiOperation("查询所有产品")
     @GetMapping("/v1/selectAll")
     public ResultModelImp<Productinfo> selectAll(Productinfo t){
@@ -37,6 +38,28 @@ public class ProductInfoController {
     @GetMapping("/v1/selectPage")
     public PageResult selectPage(PageRequest pageQuery,Productinfo t){
         return productInfoService.findPage(pageQuery,t);
+    }
+
+    @ApiOperation("商品分类详情")
+    @ApiImplicitParams(value = {@ApiImplicitParam(name = "PageRequest",dataTypeClass = PageRequest.class , value ="")})
+    @GetMapping("/v1/selectDictProduct")
+    public ResultModelImp selectDictProduct(){
+
+        return productInfoService.selectDictProduct();
+    }
+
+    @ApiOperation("商品分类详情2")
+    @GetMapping("/v1/selectDictProduct2")
+    public ResultModelImp selectDictProduct2(@RequestParam("sid") String sid,@RequestParam("pid") String pid){
+
+        return productInfoService.selectDictProductII(sid,pid);
+    }
+
+    @ApiOperation("商品分类详情3")
+    @GetMapping("/v1/selectDictProduct3")
+    public ResultModelImp selectDictProduct3(@RequestParam("sid") String sid,@RequestParam("pid") String pid){
+
+        return productInfoService.selectDictProductIII(sid,pid);
     }
 
 

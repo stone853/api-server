@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sk.web.mapper.StoreMapper">
+  <resultMap id="BaseResultMap" type="com.sk.web.model.Store">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cover" jdbcType="VARCHAR" property="cover" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="subtitle" jdbcType="VARCHAR" property="subtitle" />
+    <result column="scope" jdbcType="INTEGER" property="scope" />
+    <result column="bg" jdbcType="VARCHAR" property="bg" />
+    <result column="level" jdbcType="TINYINT" property="level" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="sort" jdbcType="SMALLINT" property="sort" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="createtime" jdbcType="VARCHAR" property="createtime" />
+    <result column="status_desc" jdbcType="VARCHAR" property="statusDesc" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="is_on_shop" jdbcType="BIT" property="isOnShop" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="top" jdbcType="VARCHAR" property="top" />
+  </resultMap>
+
+  <select id="selectPage"  resultMap="BaseResultMap" parameterType="com.sk.web.model.Store">
+    select
+    *
+    from tcrm_store where 1=1
+    <if test="id != null and id != ''">
+      and id=#{id}
+    </if>
+
+    <if test="name != null and name != ''">
+      and name like '%${name}%'
+    </if>
+  </select>
+
+</mapper>
